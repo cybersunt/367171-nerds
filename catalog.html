@@ -70,10 +70,10 @@
               <label class="filter-price__price" for="max-price"> до
                 <input type="text" class="filter-price__input" id="max-price" value="15000"/>
               </label>
-
             </div>
           </fieldset>
-          <fieldset class="filter__fieldset filter-grid">
+
+          <fieldset class="filter__fieldset">
             <legend class="filter__title">Сетка</legend>
             <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked/>
             <label class="filter__value" for="adaptive">Адаптивная</label>
@@ -82,8 +82,19 @@
             <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio"/>
             <label class="filter__value" for="rubber">Резиновая</label>
           </fieldset>
+
           <fieldset class="filter__fieldset">
             <legend class="filter__title">Особенности</legend>
+            <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked/>
+            <label class="filter__value" for="slider">Слайдер</label>
+            <input class="filter__checkbox" name="advantages" id="advantages" type="checkbox"/>
+            <label class="filter__value" for="advantages">Блок преимуществ</label>
+            <input class="filter__checkbox" name="news" id="news" type="checkbox" checked/>
+            <label class="filter__value" for="news">Новости</label>
+            <input class="filter__checkbox" name="gallery" id="gallery" type="checkbox"/>
+            <label class="filter__value" for="gallery">Галерея</label>
+            <input class="filter__checkbox" name="basket" id="basket" type="checkbox"/>
+            <label class="filter__value" for="basket">Корзина</label>
           </fieldset>
           </form>
         </section>
