@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
@@ -40,19 +39,58 @@
     <main class="main">
 
       <section class="page__name">
-        <div class="page__wrap">
+        <div class="page__wrap page__wrap--name">
           <h1 class="page__title">Магазин готовых шаблонов</h1>
         </div>
       </section>
 
-      <section class="catalog">
-        <h2 class="visually-hidden">Каталог товаров</h2>
-        <ul class="catalog__list">
-          <li class="catalog__item goods">
-            <img class="goods__picture" src="http://placehold.it/360x576" alt="Sedona" width="360" height="576">
-            <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">Sedona</a></h3>
+      <div class="page__wrap">
+
+        <section class="catalog-filter">
+          <h2 class="visually-hidden">Фильтр товаров</h2>
+          <form class="filter"  method="get" action="https://echo.htmlacademy.ru">
+          <fieldset class="filter__fieldset filter-price">
+            <legend class="filter__title">Стоимость</legend>
+            <label class="visually-hidden" for="price">Шкала стоимости
+              <input type="range" id="price" name="price" min="0" max="15000" step="50">
+            </label>
+
+            <div class="filter-price__range-controls">
+              <div class="filter-price__scale">
+                <div class="filter-price__bar"></div>
+              </div>
+              <div class="filter-price__toggle filter-price__toggle--toggle-min"></div>
+              <div class="filter-price__toggle filter-price__toggle--toggle-max"></div>
+            </div>
+
+            <div class="filter-price__controls">
+              <label class="filter-price__price" for="min-price"> от
+                <input type="text" class="filter-price__input" id="min-price" value="0"/>
+              </label>
+              <label class="filter-price__price" for="max-price"> до
+                <input type="text" class="filter-price__input" id="max-price" value="15000"/>
+              </label>
+
+            </div>
+          </fieldset>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Сетка</legend>
+          </fieldset>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Особенности</legend>
+          </fieldset>
+          </form>
+        </section>
+
+        <section class="catalog">
+          <h2 class="visually-hidden">Каталог товаров</h2>
+          <ul class="catalog__list">
+            <li class="catalog__item goods">
+              <img class="goods__picture" src="http://placehold.it/360x576" alt="Sedona" width="360" height="576">
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">Sedona</a>
+                </h3>
               <p class="goods__desc">Информационный сайт для туристов</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
@@ -60,8 +98,9 @@
           <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Pink App" width="360" height="576">
             <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">Pink App</a></h3>
+              <h3 class="goods__name">
+                <a class="goods__link" href="catalog-item.html">Pink App</a>
+              </h3>
               <p class="goods__desc">Продуктовый лендинг приложения для iOS и Android</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
@@ -69,8 +108,9 @@
           <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Barbershop" width="360" height="576">
             <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">Barbershop</a></h3>
+              <h3 class="goods__name">
+                <a class="goods__link" href="catalog-item.html">Barbershop</a>
+              </h3>
               <p class="goods__desc">Сайт салоны красоты. Для мужчин, да.</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
@@ -78,8 +118,9 @@
           <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Mishka" width="360" height="576">
             <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">Mishka</a></h3>
+              <h3 class="goods__name">
+                <a class="goods__link" href="catalog-item.html">Mishka</a>
+              </h3>
               <p class="goods__desc">Интернет-магазин вязаных игрушек</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
@@ -87,8 +128,9 @@
           <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="A Plus" width="360" height="576">
             <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">A Plus</a></h3>
+              <h3 class="goods__name">
+                <a class="goods__link" href="catalog-item.html">A Plus</a>
+              </h3>
               <p class="goods__desc">Лендинг курсов повышения квалификации</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
@@ -96,14 +138,16 @@
           <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Кваст" width="360" height="576">
             <div class="goods__hover">
-              <img class="goods__browser" src="http://placehold.it/360x40">
-              <h3 class="goods__name"><a class="goods__link" href="catalog-item.html">Кваст</a></h3>
+              <h3 class="goods__name">
+                <a class="goods__link" href="catalog-item.html">Кваст</a>
+              </h3>
               <p class="goods__desc">Промо-сайт производителя крафтового кваса</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
           </li>
         </ul>
-      </section>
+        </section>
+      </div>
 
       <section class="contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
