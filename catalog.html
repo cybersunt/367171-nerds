@@ -49,7 +49,7 @@
         <section class="catalog-filter">
           <h2 class="visually-hidden">Фильтр товаров</h2>
           <form class="filter"  method="get" action="https://echo.htmlacademy.ru">
-          <fieldset class="filter__fieldset filter-price">
+            <fieldset class="filter__fieldset filter-price">
             <legend class="filter__title">Стоимость</legend>
             <label class="visually-hidden" for="price">Шкала стоимости
               <input type="range" id="price" name="price" min="0" max="15000" step="50">
@@ -71,9 +71,9 @@
                 <input type="text" class="filter-price__input" id="max-price" value="15000"/>
               </label>
             </div>
-          </fieldset>
+            </fieldset>
 
-          <fieldset class="filter__fieldset">
+            <fieldset class="filter__fieldset">
             <legend class="filter__title">Сетка</legend>
             <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked/>
             <label class="filter__value" for="adaptive">Адаптивная</label>
@@ -81,9 +81,9 @@
             <label class="filter__value" for="fixed">Фиксированная</label>
             <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio"/>
             <label class="filter__value" for="rubber">Резиновая</label>
-          </fieldset>
+            </fieldset>
 
-          <fieldset class="filter__fieldset">
+            <fieldset class="filter__fieldset">
             <legend class="filter__title">Особенности</legend>
             <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked/>
             <label class="filter__value" for="slider">Слайдер</label>
@@ -95,7 +95,8 @@
             <label class="filter__value" for="gallery">Галерея</label>
             <input class="filter__checkbox" name="basket" id="basket" type="checkbox"/>
             <label class="filter__value" for="basket">Корзина</label>
-          </fieldset>
+            </fieldset>
+            <button type="submit" class="btn filter__btn">Применить</button>
           </form>
         </section>
 
