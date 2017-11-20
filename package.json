@@ -6,8 +6,11 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "browser-sync": "^2.18.13",
+    "css-mqpacker": "^6.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-changed": "^3.1.1",
     "gulp-csso": "^3.0.0",
+    "gulp-file-include": "^1.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
@@ -20,8 +23,8 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint 'source/css/**/*.css' --syntax css",
     "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp style",
-    "start": "gulp serve"
+    "build": "gulp html && gulp style",
+    "start": "npm run build && gulp serve"
   },
   "browserslist": [
     "last 2 versions",

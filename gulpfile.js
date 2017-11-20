@@ -7,32 +7,46 @@ var gulp = require('gulp'),
 
     postcss = require('gulp-postcss'),
     minify = require('gulp-csso'),
+    fileinclude = require('gulp-file-include'),
 
     importcss = require('postcss-import'),
     urlcss = require('postcss-url'),
     autoprefixer = require('autoprefixer'),
+    mqpacker = require('css-mqpacker'),
 
     server = require('browser-sync').create();
 
-// ЗАДАЧА: Компиляция css
+// ЗАДАЧА: Компиляция CSS
 gulp.task('style', function() {
-  return gulp.src('./source/css/path/style.css')
-    .pipe(plumber())
-    .pipe(postcss([
-      importcss(),
-      urlcss(),
-      autoprefixer()
+  return gulp.src('./source/css/path/style.css')       // какой файл компилировать
+    .pipe(plumber())                                   // отлавливаем ошибки
+    .pipe(postcss([                                    // делаем постпроцессинг
+      importcss(),                                     // импортируем пути
+      urlcss(),                                        // правит пути
+      autoprefixer({ browsers: ['last 2 version'] }),  // автопрефиксирование
+      mqpacker({ sort: true })                         // объединение медиавыражений
     ]))
-    .pipe(gulp.dest('./build/css'))
-    .pipe(minify())
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
+    .pipe(minify())                                    // минифицируем CSS-файл
+    .pipe(rename("style.min.css"))                     // переименовываем CSS-файл
+    .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
     .pipe(server.stream());
+});
+
+// ЗАДАЧА: Сборка HTML
+gulp.task('html', function() {
+  return gulp.src('./source/*.html')                   // какие файлы обрабатывать
+    .pipe(plumber())
+    .pipe(fileinclude({                                // обрабатываем gulp-file-include
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./build/'));                      // записываем файлы (путь из константы)
 });
 
 gulp.task('serve', function() {
   return server.init({
-    server: './source',
+    server: './build',
     notify: false,
     open: true,
     cors: true,
@@ -40,5 +54,5 @@ gulp.task('serve', function() {
 });
 
   gulp.watch('./source/**/*.css', ['style']);
-  gulp.watch('./source/*.html').on('change', server.reload);
+  gulp.watch('./source/**/*.html').on('change', server.reload);
 });
