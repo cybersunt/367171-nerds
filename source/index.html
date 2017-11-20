@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Дизайн-студия Nerds - Главная</title>
     <meta name="description" content="Макет учебного проекта Нёрдс взят с интенсива HTMLADEMY - Базовый HTML и CSS#18">
-    <link rel="stylesheet" href="css/path/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
     <header class="header">
@@ -175,53 +175,11 @@
         </ul>
       </section>
 
-      <section class="contacts">
-        <h2 class="visually-hidden">Наши контакты</h2>
-        <div class="contacts__map" id="map">
-          <img class="contacts__map-img"  src="http://placehold.it/1440x420" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург" width="1440" height="420"/>
-        </div>
-        <div class="contacts__wrap">
-          <div class="contacts__info">
-            <p class="contacts__name">Nёrds Design Studio</p>
-            <p class="contacts__adress">191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-            <p class="contacts__phone">тел. +7 (812) 275-75-75</p>
-            <a class="btn contacts__btn" href="write-us.html">Напишите нам</a>
-          </div>
-        </div>
-      </section>
+@@include('./_include/contacts.html')
+
     </main>
 
-    <footer class="footer">
-      <div class="footer__wrap">
-
-        <ul class="social">
-          <li class="social__item">
-            <a class="social__link" href="https://vk.com">
-              <img class="social__picture" src="http://placehold.it/80x80" alt="Мы во Вконтакте" />
-              <span class="visually-hidden">Мы во Вконтакте</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="https://facebook.com">
-              <img class="social__picture" src="http://placehold.it/80x80" alt="Мы в Facebook" />
-              <span class="visually-hidden">Мы в Facebook</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="https://instagram.com">
-              <img class="social__picture" src="http://placehold.it/80x80" alt="Мы в Instagram" />
-              <span class="visually-hidden">Мы в Instagram</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="footer__promo">
-          <p class="footer__text">Давайте дружить, это выгодно!</p>
-          <p class="footer__note">Скидка 10% для друзей из социальных сетей.</p>
-        </div>
-
-      </div>
-    </footer>
+@@include('./_include/footer.html')
 
     <div class="overlay"></div>
       <section class="feedback">
