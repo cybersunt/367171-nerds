@@ -54,7 +54,7 @@ gulp.task('clean', function() {
 // ЗАДАЧА: Копирование файлов
 gulp.task('copy', function() {
   return gulp.src([
-    './source/fonts/**/*.otf',
+    './source/fonts/**',
     './source/img/**',
     './source/js/**',
     './source/*.html'
