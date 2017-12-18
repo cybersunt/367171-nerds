@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
 
     postcss = require('gulp-postcss'),
-    minify = require('gulp-csso'),
+    csso = require('gulp-csso'),
     fileinclude = require('gulp-file-include'),
 
     importcss = require('postcss-import'),
@@ -14,10 +14,11 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     mqpacker = require('css-mqpacker'),
 
-    server = require('browser-sync').create();
+    del = require("del"),
+    browserSync = require('browser-sync').create();
 
 // ЗАДАЧА: Компиляция CSS
-gulp.task('style', function() {
+gulp.task('styles', function() {
   return gulp.src('./source/css/path/style.css')       // какой файл компилировать
     .pipe(plumber())                                   // отлавливаем ошибки
     .pipe(postcss([                                    // делаем постпроцессинг
@@ -27,10 +28,10 @@ gulp.task('style', function() {
       mqpacker({ sort: true })                         // объединение медиавыражений
     ]))
     .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
-    .pipe(minify())                                    // минифицируем CSS-файл
+    .pipe(csso())                                      // минифицируем CSS-файл
     .pipe(rename("style.min.css"))                     // переименовываем CSS-файл
     .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
-    .pipe(server.stream());
+    .pipe(browserSync.stream());
 });
 
 // ЗАДАЧА: Сборка HTML
@@ -43,6 +44,12 @@ gulp.task('html', function() {
     }))
     .pipe(gulp.dest('./build/'));                      // записываем файлы (путь из константы)
 });
+
+// ЗАДАЧА: Удаляем папку public
+gulp.task('clean', function() {
+  return del('./build');
+});
+
 
 // ЗАДАЧА: Копирование файлов
 gulp.task('copy', function() {
@@ -57,17 +64,35 @@ gulp.task('copy', function() {
   .pipe(gulp.dest("./build"));
 });
 
-
+// ЗАДАЧА: Сборка всего и локальный сервер
 gulp.task('serve', function() {
-  return server.init({
-    server: './build',
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
-});
+    browserSync.init({
+      open: true,
+      server: {
+        baseDir: 'build/',
+        index: 'index.html'
+     }
+    });
+    browserSync.watch(['./build/**/*.*'], browserSync.reload);
+  });
 
-  gulp.watch('./source/**/*', ['copy']);
-  gulp.watch('./source/**/*.css', ['style']);
-  gulp.watch('./source/**/*.html').on('change', server.reload);
-});
+gulp.task('watch', function() {
+  gulp.watch('./source/css/**/*.css', gulp.series('styles'));    // следим за CSS
+  gulp.watch('./source/**/*.html', gulp.series('html'));         // следим за HTML
+  });
+
+// ЗАДАЧА: Сборка всего и локальный сервер
+gulp.task('default',
+  gulp.series(
+    'clean',
+    'copy',
+    'html',
+  gulp.parallel(
+    'styles'
+  ),
+  gulp.parallel(
+    'watch',
+    'serve'
+  )
+));
+
