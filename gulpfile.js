@@ -44,6 +44,20 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./build/'));                      // записываем файлы (путь из константы)
 });
 
+// ЗАДАЧА: Копирование файлов
+gulp.task('copy', function() {
+  return gulp.src([
+    './source/fonts/**/*.otf',
+    './source/img/**',
+    './source/js/**',
+    './source/*.html'
+  ], {
+    base: "./source"
+  })
+  .pipe(gulp.dest("./build"));
+});
+
+
 gulp.task('serve', function() {
   return server.init({
     server: './build',
@@ -53,6 +67,7 @@ gulp.task('serve', function() {
     ui: false
 });
 
+  gulp.watch('./source/**/*', ['copy']);
   gulp.watch('./source/**/*.css', ['style']);
   gulp.watch('./source/**/*.html').on('change', server.reload);
 });

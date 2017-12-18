@@ -43,6 +43,7 @@
     "node": "8.2"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "gulp-cli": "^1.4.0"
   }
 }
