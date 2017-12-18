@@ -1,0 +1,37 @@
+.main-nav {
+  display: flex;
+}
+
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  margin-right: 15px;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav__item {
+  margin-right: 15px;
+}
+
+.main-nav__link {
+  font-family: 'Roboto Medium', 'Tahoma';
+  line-height: 30px;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus {
+  color: #fb565a;
+}
+
+.main-nav__link:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main-nav__link--current{
+  padding-bottom: 5px;
+  border-bottom: 2px solid #fb565a;
+}

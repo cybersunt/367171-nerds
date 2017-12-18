@@ -1,4 +1,7 @@
 @import url('../base/normalize.css');
 @import url('../base/fonts.css');
 @import url('../base/scaffolding.css');
+@import url('../styles/page.css');
 @import url('../styles/header.css');
+@import url('../styles/main-nav.css');
+@import url('../styles/user-nav.css');

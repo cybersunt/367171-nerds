@@ -1,0 +1,14 @@
+.header {
+  box-shadow: 0 0 5px #008000;
+}
+
+.header__wrap {
+  display: flex;
+  padding-left: 140px;
+  padding-right: 140px;
+  margin: 0 auto;
+}
+
+.header__img {
+  display: block;
+}
