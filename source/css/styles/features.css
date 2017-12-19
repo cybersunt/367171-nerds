@@ -1,0 +1,24 @@
+.features__text {
+  font-family: 'Roboto Medium', 'Tahoma Medium';
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.features__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+}
+
+.features__percent {
+  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-size: 45px;
+  line-height: 10px;
+}
+
+.features__desc {
+  line-height: 18px;
+  color: #283136;
+}
