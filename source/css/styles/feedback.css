@@ -1,0 +1,33 @@
+.feedback {
+  width: 960px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0 auto;
+  height: 592px;
+
+  box-shadow: 0 0 5px red;
+}
+
+.feedback__wrap {
+  width: 760px;
+  margin: 0 auto;
+
+  box-shadow: 0 0 5px navy;
+}
+
+.feedback__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feedback__field {
+  width: 360px;
+  height: 48px;
+}
+
+.feedback__textarea {
+  resize: none;
+  width: 760px;
+  height: 114px;
+}

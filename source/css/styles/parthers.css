@@ -1,0 +1,23 @@
+.parthers {
+  box-shadow: 0 0 5px #008000;
+}
+
+.parthers__wrap {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 1200px;
+  margin: 0 auto;
+
+  padding-bottom: 30px;
+  border-bottom: 2px solid #eeeeee;
+
+  box-shadow: 0 0 5px navy;
+}
+
+.parthers__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
