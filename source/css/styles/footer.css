@@ -15,3 +15,14 @@
 
   box-shadow: 0 0 5px navy;
 }
+
+.footer__text {
+  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.footer__note {
+  line-height: 22px;
+  color: #444444;
+}
