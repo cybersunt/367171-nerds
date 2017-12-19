@@ -12,6 +12,10 @@
 @import url('../styles/features.css');
 @import url('../styles/parthers.css');
 @import url('../styles/contacts.css');
+@import url('../styles/filter.css');
+@import url('../styles/sorting.css');
+@import url('../styles/catalog.css');
+@import url('../styles/pagination.css');
 @import url('../styles/footer.css');
 @import url('../styles/social.css');
 @import url('../styles/feedback.css');

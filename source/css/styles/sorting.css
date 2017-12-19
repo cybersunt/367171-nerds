@@ -1,0 +1,19 @@
+.sorting {
+  width: 760px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+
+  box-shadow: 0 0 5px #008000;
+}
+
+.sorting__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.sorting__item {
+  margin-right: 20px;
+}

@@ -37,24 +37,23 @@
       </div>
     </header>
 
-    <main class="main">
-
-      <section class="page__name">
-        <div class="page__wrap page__wrap--name">
-          <h1 class="page__title">Магазин готовых шаблонов</h1>
-        </div>
-      </section>
-
+    <section class="page__name">
       <div class="page__wrap">
+        <h1 class="page__title">Магазин готовых шаблонов</h1>
+      </div>
+    </section>
 
-        <section class="catalog-filter">
+    <main class="catalog">
+      <div class="catalog__wrap">
+
+        <section class="catalog__filter">
           <h2 class="visually-hidden">Фильтр товаров</h2>
           <form class="filter"  method="get" action="https://echo.htmlacademy.ru">
             <fieldset class="filter__fieldset filter-price">
-            <legend class="filter__title">Стоимость</legend>
-            <label class="visually-hidden" for="price">Шкала стоимости
-              <input type="range" id="price" name="price" min="0" max="15000" step="50">
-            </label>
+              <legend class="filter__title">Стоимость</legend>
+              <label class="visually-hidden" for="price">Шкала стоимости
+                <input type="range" id="price" name="price" min="0" max="15000" step="50">
+              </label>
 
             <div class="filter-price__range-controls">
               <div class="filter-price__scale">
@@ -75,90 +74,91 @@
             </fieldset>
 
             <fieldset class="filter__fieldset">
-            <legend class="filter__title">Сетка</legend>
-            <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked/>
-            <label class="filter__value" for="adaptive">Адаптивная</label>
-            <input class="filter__radio" name="grid" id="fixed" value="fixed" type="radio"/>
-            <label class="filter__value" for="fixed">Фиксированная</label>
-            <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio"/>
-            <label class="filter__value" for="rubber">Резиновая</label>
+              <legend class="filter__title">Сетка</legend>
+              <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked/>
+              <label class="filter__value" for="adaptive">Адаптивная</label>
+              <input class="filter__radio" name="grid" id="fixed" value="fixed" type="radio"/>
+              <label class="filter__value" for="fixed">Фиксированная</label>
+              <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio"/>
+              <label class="filter__value" for="rubber">Резиновая</label>
             </fieldset>
 
             <fieldset class="filter__fieldset">
-            <legend class="filter__title">Особенности</legend>
-            <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked/>
-            <label class="filter__value" for="slider">Слайдер</label>
-            <input class="filter__checkbox" name="advantages" id="advantages" type="checkbox"/>
-            <label class="filter__value" for="advantages">Блок преимуществ</label>
-            <input class="filter__checkbox" name="news" id="news" type="checkbox" checked/>
-            <label class="filter__value" for="news">Новости</label>
-            <input class="filter__checkbox" name="gallery" id="gallery" type="checkbox"/>
-            <label class="filter__value" for="gallery">Галерея</label>
-            <input class="filter__checkbox" name="basket" id="basket" type="checkbox"/>
-            <label class="filter__value" for="basket">Корзина</label>
+              <legend class="filter__title">Особенности</legend>
+              <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked/>
+              <label class="filter__value" for="slider">Слайдер</label>
+              <input class="filter__checkbox" name="advantages" id="advantages" type="checkbox"/>
+              <label class="filter__value" for="advantages">Блок преимуществ</label>
+              <input class="filter__checkbox" name="news" id="news" type="checkbox" checked/>
+              <label class="filter__value" for="news">Новости</label>
+              <input class="filter__checkbox" name="gallery" id="gallery" type="checkbox"/>
+              <label class="filter__value" for="gallery">Галерея</label>
+              <input class="filter__checkbox" name="basket" id="basket" type="checkbox"/>
+              <label class="filter__value" for="basket">Корзина</label>
             </fieldset>
             <button type="submit" class="btn filter__btn">Применить</button>
           </form>
         </section>
 
-        <section class="sorting">
-          <h2 class="visually-hidden">Сортировка</h2>
-          <span class="sorting__title">Сортировать:</span>
-          <ul class="sorting__list">
-            <li class="sorting__item">
-              <a class="sorting__link sorting__link--active" href="#">По цене</a>
-            </li>
-            <li class="sorting__item">
-              <a class="sorting__link" href="#">По типу</a>
-            </li>
-            <li class="sorting__item">
-              <a class="sorting__link" href="#">По названию</a>
-            </li>
-          </ul>
-          <div class="sorting__arrows">
-            <a class="sorting__arrow sorting__arrow--down" href="#">
-              <span class="visually-hidden">Сверху вниз</span>
-            </a>
-            <a class="sorting__arrow sorting__arrow--up" href="#">
-              <span class="visually-hidden">Снизу вверх</span>
-            </a>
-          </div>
-        </section>
+        <div class="catalog__column">
+          <section class="sorting">
+            <h2 class="visually-hidden">Сортировка</h2>
+            <span class="sorting__title">Сортировать:</span>
+            <ul class="sorting__list">
+              <li class="sorting__item">
+                <a class="sorting__link sorting__link--active" href="#">По цене</a>
+              </li>
+              <li class="sorting__item">
+                <a class="sorting__link" href="#">По типу</a>
+              </li>
+              <li class="sorting__item">
+                <a class="sorting__link" href="#">По названию</a>
+              </li>
+            </ul>
+            <div class="sorting__arrows">
+              <a class="sorting__arrow sorting__arrow--down" href="#">
+                <span class="visually-hidden">Сверху вниз</span>
+              </a>
+              <a class="sorting__arrow sorting__arrow--up" href="#">
+                <span class="visually-hidden">Снизу вверх</span>
+              </a>
+            </div>
+          </section>
 
-        <section class="catalog">
-          <h2 class="visually-hidden">Каталог товаров</h2>
-          <ul class="catalog__list">
+          <section class="catalog__products">
+            <h2 class="visually-hidden">Каталог товаров</h2>
+            <ul class="catalog__list">
             <li class="catalog__item goods">
               <img class="goods__picture" src="http://placehold.it/360x576" alt="Sedona" width="360" height="576">
               <div class="goods__hover">
                 <h3 class="goods__name">
-                  <a class="goods__link" href="catalog-item.html">Sedona</a>
+                   <a class="goods__link" href="catalog-item.html">Sedona</a>
                 </h3>
-              <p class="goods__desc">Информационный сайт для туристов</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
-          </li>
-          <li class="catalog__item goods">
-            <img class="goods__picture" src="http://placehold.it/360x576" alt="Pink App" width="360" height="576">
-            <div class="goods__hover">
-              <h3 class="goods__name">
-                <a class="goods__link" href="catalog-item.html">Pink App</a>
+                <p class="goods__desc">Информационный сайт для туристов</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
+              </li>
+            <li class="catalog__item goods">
+             <img class="goods__picture" src="http://placehold.it/360x576" alt="Pink App" width="360" height="576">
+             <div class="goods__hover">
+               <h3 class="goods__name">
+                 <a class="goods__link" href="catalog-item.html">Pink App</a>
               </h3>
-              <p class="goods__desc">Продуктовый лендинг приложения для iOS и Android</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+               <p class="goods__desc">Продуктовый лендинг приложения для iOS и Android</p>
+               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
-          </li>
-          <li class="catalog__item goods">
-            <img class="goods__picture" src="http://placehold.it/360x576" alt="Barbershop" width="360" height="576">
-            <div class="goods__hover">
-              <h3 class="goods__name">
-                <a class="goods__link" href="catalog-item.html">Barbershop</a>
-              </h3>
-              <p class="goods__desc">Сайт салоны красоты. Для мужчин, да.</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
-          </li>
-          <li class="catalog__item goods">
+            </li>
+            <li class="catalog__item goods">
+              <img class="goods__picture" src="http://placehold.it/360x576" alt="Barbershop" width="360" height="576">
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">Barbershop</a>
+                </h3>
+                <p class="goods__desc">Сайт салоны красоты. Для мужчин, да.</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
+            </li>
+            <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Mishka" width="360" height="576">
             <div class="goods__hover">
               <h3 class="goods__name">
@@ -167,8 +167,8 @@
               <p class="goods__desc">Интернет-магазин вязаных игрушек</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
-          </li>
-          <li class="catalog__item goods">
+            </li>
+            <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="A Plus" width="360" height="576">
             <div class="goods__hover">
               <h3 class="goods__name">
@@ -177,8 +177,8 @@
               <p class="goods__desc">Лендинг курсов повышения квалификации</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
-          </li>
-          <li class="catalog__item goods">
+            </li>
+            <li class="catalog__item goods">
             <img class="goods__picture" src="http://placehold.it/360x576" alt="Кваст" width="360" height="576">
             <div class="goods__hover">
               <h3 class="goods__name">
@@ -187,21 +187,21 @@
               <p class="goods__desc">Промо-сайт производителя крафтового кваса</p>
               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
             </div>
-          </li>
-        </ul>
-        </section>
+            </li>
+            </ul>
+          </section>
 
-        <section class="pagination">
-        <h2 class="visually-hidden">Пагинация</h2>
-        <a class="pagination__item pagination__item--prev">
-          <span>Предыдущая</span>
-        </a>
-        <a class="pagination__item pagination__item--current" href="#">1</a>
-        <a class="pagination__item" href="#">2</a>
-        <a class="pagination__item" href="#">3</a>
-        <a class="pagination__item pagination__item--next" href="#">Следующая</a>
-        </section>
-
+          <section class="pagination">
+          <h2 class="visually-hidden">Пагинация</h2>
+          <a class="pagination__item pagination__item--prev">
+            <span>Предыдущая</span>
+          </a>
+          <a class="pagination__item pagination__item--current" href="#">1</a>
+          <a class="pagination__item" href="#">2</a>
+          <a class="pagination__item" href="#">3</a>
+          <a class="pagination__item pagination__item--next" href="#">Следующая</a>
+          </section>
+        </div>
       </div>
 
 @@include('./_include/contacts.html')
