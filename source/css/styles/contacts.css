@@ -32,6 +32,36 @@
 .contacts__info {
   position: absolute;
   top: 0;
+  width: 320px;
+  height: 310px;
+  padding-top: 50px;
+  padding-bottom: 48px;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: #ffffff;
   box-shadow: 0 0 5px lime;
+}
+
+.contacts__name {
+  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.contacts__adress {
+  line-height: 18px;
+  color: #666666;
+}
+
+.contacts__phone {
+  line-height: 18px;
+  color: #666666;
+}
+
+.contacts__btn {
+  width: 220px;
+  height: 50px;
+  display: block;
+  text-align: center;
 }
