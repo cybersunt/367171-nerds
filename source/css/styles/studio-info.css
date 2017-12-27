@@ -17,7 +17,7 @@
 }
 
 .studio-info__caption {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   font-size: 45px;
   line-height: 45px;
 }
@@ -28,7 +28,7 @@
 }
 
 .studio-info__desc--service {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   text-transform: uppercase;
 }
 

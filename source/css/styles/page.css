@@ -4,6 +4,7 @@
   min-width: 1440px;
   margin: 0 auto;
   font-family: 'Roboto', 'Tahoma';
+  font-weight: 400;
   color: #283136;
   font-size: 16px;
   line-height: 20px;
@@ -21,7 +22,7 @@
   justify-content: center;
 }
 
-.page__name {
+.page__name {41
   width: 100%;
   height: 240px;
   background-color: #eeeeee;
@@ -29,7 +30,7 @@
 }
 
 .page__title {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   font-size: 55px;
   line-height: 55px;
 }

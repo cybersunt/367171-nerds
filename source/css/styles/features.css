@@ -1,5 +1,5 @@
 .features__text {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   line-height: 24px;
   text-transform: uppercase;
 }
@@ -13,7 +13,7 @@
 }
 
 .features__percent {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   font-size: 45px;
   line-height: 10px;
 }

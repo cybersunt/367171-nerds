@@ -28,7 +28,7 @@
 
 .feedback__note {
   display: block;
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   line-height: 18px;
 }
 

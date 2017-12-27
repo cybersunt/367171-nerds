@@ -15,7 +15,7 @@
 }
 
 .main-nav__link {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   line-height: 30px;
   color: #000000;
   text-decoration: none;

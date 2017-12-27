@@ -30,7 +30,7 @@
 }
 
 .slider__caption {
-  font-family: 'Roboto Medium', 'Tahoma Medium';
+  font-weight: 500;
   font-size: 55px;
   line-height: 55px;
 }

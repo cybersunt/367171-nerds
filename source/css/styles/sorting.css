@@ -7,6 +7,13 @@
   box-shadow: 0 0 5px #008000;
 }
 
+.sorting__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
 .sorting__list {
   list-style: none;
   margin: 0;
@@ -16,4 +23,23 @@
 
 .sorting__item {
   margin-right: 20px;
+}
+
+.sorting__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.3);
+
+}
+
+.sorting__link:hover,
+.sorting__link:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sorting__link:active,
+.sorting__link--active {
+  color: rgba(0, 0, 0, 1);
 }
