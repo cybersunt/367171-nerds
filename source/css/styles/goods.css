@@ -1,0 +1,61 @@
+.goods {
+  position: relative;
+  margin-bottom: 33px;
+}
+
+.goods:hover,
+.goods:focus {
+  cursor: pointer;
+}
+
+.goods:hover .goods__hover,
+.goods:focus .goods__hover {
+  display: block;
+}
+
+.goods__picture {
+  display: block;
+}
+
+.goods__hover {
+  display: none;
+  position: absolute;
+  background-color: #eeeeee;
+  width: 360px;
+  height: 230px;
+  padding: 31px 90px 43px;
+  top: 346px;
+  z-index: 2;
+  text-align: center;
+}
+
+.goods__name {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.goods__link {
+  font-size: inherit;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.goods__link:hover,
+.goods__link:focus {
+  color: #fb565a;
+}
+
+.goods__link:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.goods__desc {
+  line-height: 18px;
+  color: #666666;
+}
+
+.goods__price {
+  display: block;
+  cursor: pointer;
+}
