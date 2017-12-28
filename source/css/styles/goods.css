@@ -3,17 +3,12 @@
   margin-bottom: 33px;
 }
 
-.goods:hover,
-.goods:focus {
-  cursor: pointer;
-}
-
-.goods:hover .goods__hover,
-.goods:focus .goods__hover {
+.goods__picture {
   display: block;
 }
 
-.goods__picture {
+.goods__link-img:hover + .goods__hover,
+.goods__link-img:focus + .goods__hover {
   display: block;
 }
 
