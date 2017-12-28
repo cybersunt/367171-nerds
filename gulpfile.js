@@ -79,6 +79,7 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
   gulp.watch('./source/css/**/*.css', gulp.series('styles'));    // следим за CSS
   gulp.watch('./source/**/*.html', gulp.series('html'));         // следим за HTML
+  gulp.watch('./source/img/**', gulp.series('copy'));            // следим за картинками
   });
 
 // ЗАДАЧА: Сборка всего и локальный сервер
