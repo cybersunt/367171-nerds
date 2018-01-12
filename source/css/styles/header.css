@@ -1,17 +1,22 @@
 .header {
+  min-height: 116px;
   background-color: #eeeeee;
-  box-shadow: 0 0 5px #008000;
 }
 
 .header__wrap {
+  min-height: inherit;
   display: flex;
-  justify-content: space-between;
+  align-items: flex-end;
   padding-left: 20px;
   padding-right: 20px;
   width: 1200px;
   margin: 0 auto;
+}
 
-  box-shadow: 0 0 5px navy;
+.header__logo {
+  width: 160px;
+  height: 65px;
+  margin-right: 202px;
 }
 
 .header__img {

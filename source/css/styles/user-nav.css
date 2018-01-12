@@ -1,5 +1,7 @@
 .user-nav {
+  width: 160px;
   display: flex;
+  justify-content: flex-end;
 }
 
 .user-nav__link {

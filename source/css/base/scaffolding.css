@@ -9,6 +9,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+
+  background: url('../img/nerds-index.jpg') 0 0 no-repeat;
+  opacity: 0.3;
 }
 
 .visually-hidden {
