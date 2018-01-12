@@ -8,7 +8,6 @@
   width: 1200px;
   margin: 0 auto;
 
-  padding-bottom: 30px;
   border-bottom: 2px solid #eeeeee;
 
   box-shadow: 0 0 5px navy;
@@ -20,4 +19,21 @@
   padding: 0;
   display: flex;
   justify-content: space-between;
+}
+
+.parthers__item {
+  width: 260px;
+  height: 160px;
+}
+
+.parthers__link {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parthers__logo {
+  display: block;
 }

@@ -7,11 +7,6 @@
   display: block;
 }
 
-.goods__link-img:hover + .goods__hover,
-.goods__link-img:focus + .goods__hover {
-  display: block;
-}
-
 .goods__hover {
   display: none;
   position: absolute;
@@ -52,5 +47,9 @@
 
 .goods__price {
   display: block;
-  cursor: pointer;
+}
+
+.goods__link-img:hover + .goods__hover,
+.goods__link-img:focus + .goods__hover {
+  display: block;
 }
