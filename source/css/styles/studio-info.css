@@ -1,11 +1,12 @@
 .studio-info {
+  width: 1440px;
+  padding-left: 140px;
+  padding-right: 140px;
   box-shadow: 0 0 5px #008000;
 }
 
 .studio-info__wrap {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 1200px;
+  width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -16,24 +17,63 @@
   box-shadow: 0 0 5px navy;
 }
 
+.studio-info__about-us {
+  width: 780px;
+  padding-top: 34px;
+}
+
 .studio-info__caption {
+  display: block;
   font-weight: 500;
   font-size: 45px;
   line-height: 45px;
+  margin-bottom: 33px;
 }
 
 .studio-info__desc {
   line-height: 24px;
   color: #283136;
+  margin-top: 0;
+  margin-bottom: 40px;
 }
 
 .studio-info__desc--service {
   font-weight: 500;
   text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
 .studio-info__desc--list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.studio-info__desc--item {
+  padding-left: 36px;
+  margin-bottom: 23px;
+  position: relative;
+}
+
+.studio-info__desc--item::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fb565a;
+  left: 0;
+  top: 10px;
+}
+
+.studio-info__desc--item:last-child {
+  margin-bottom: 0;
+}
+
+.studio-info__stat {
+  width: 360px;
+}
+
+.studio-info__picture {
+  display: block;
+  margin-bottom: 37px;
 }

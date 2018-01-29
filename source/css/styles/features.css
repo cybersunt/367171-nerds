@@ -2,6 +2,9 @@
   font-weight: 500;
   line-height: 24px;
   text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin-bottom: 57px;
 }
 
 .features__list {
@@ -12,13 +15,26 @@
   display: flex;
 }
 
-.features__percent {
-  font-weight: 500;
+.features__item {
   font-size: 45px;
   line-height: 10px;
 }
 
+.features__percent {
+  font-weight: 500;
+
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 35px;
+}
+
+.features__percent + sup {
+  font-size: 27px;
+  line-height: 24px;
+}
+
 .features__desc {
+  font-size: 16px;
   line-height: 18px;
   color: #283136;
 }
