@@ -16,6 +16,7 @@
 }
 
 .features__item {
+  width: 119px;
   font-size: 45px;
   line-height: 10px;
 }
@@ -24,11 +25,11 @@
   font-weight: 500;
 
   display: inline-block;
-  vertical-align: top;
-  margin-bottom: 35px;
+  vertical-align: middle;
+  margin-bottom: 22px;
 }
 
-.features__percent + sup {
+.features__percent sup {
   font-size: 27px;
   line-height: 24px;
 }
@@ -37,4 +38,5 @@
   font-size: 16px;
   line-height: 18px;
   color: #283136;
+  display: inline-block;
 }

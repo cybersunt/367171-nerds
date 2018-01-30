@@ -2,7 +2,7 @@
   width: 1440px;
   padding-left: 140px;
   padding-right: 140px;
-  box-shadow: 0 0 5px #008000;
+  margin-bottom: 44px;
 }
 
 .studio-info__wrap {
@@ -10,15 +10,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
   padding-bottom: 30px;
-  border-bottom: 2px solid #eeeeee;
-
-  box-shadow: 0 0 5px navy;
 }
 
 .studio-info__about-us {
-  width: 780px;
+  width: 660px;
   padding-top: 34px;
 }
 
