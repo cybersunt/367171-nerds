@@ -1,4 +1,7 @@
 .header {
+  width: 1440px;
+  padding-left: 140px;
+  padding-right: 140px;
   min-height: 116px;
   background-color: #eeeeee;
 }
@@ -7,9 +10,7 @@
   min-height: inherit;
   display: flex;
   align-items: flex-end;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 1200px;
+  width: 1160px;
   margin: 0 auto;
 }
 
