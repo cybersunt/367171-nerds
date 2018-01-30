@@ -1,0 +1,22 @@
+    <div class="overlay"></div>
+      <section class="feedback feedback--show">
+        <div class="feedback__wrap">
+          <h2 class="feedback__title">Напишите нам</h2>
+          <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
+            <label class="feedback__label">
+              <span class="feedback__note">Ваше имя:</span>
+              <input class="feedback__field" placeholder="Представьтесь, пожалуйста" type="text" name="your-name" id="your-name" required/>
+            </label>
+            <label class="feedback__label">
+              <span class="feedback__note">Ваше email:</span>
+              <input class="feedback__field" placeholder="Для отправки ответа" type="email" name="email" id="email" required/>
+            </label>
+            <label class="feedback__label feedback__label--textarea">
+              <span class="feedback__note">Текст письма:</span>
+              <textarea class="feedback__textarea" placeholder="В свободной форме" name="message" id="message" ></textarea>
+            </label>
+            <button class="btn feedback__send" type="submit">Отправить</button>
+          </form>
+          <button type="button" class="feedback__close" aria-bale="Закрыть"></button>
+        </div>
+      </section>
