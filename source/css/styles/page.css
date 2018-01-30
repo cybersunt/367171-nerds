@@ -8,6 +8,7 @@
   color: #283136;
   font-size: 16px;
   line-height: 20px;
+  position: relative;;
 }
 
 .page__wrap {

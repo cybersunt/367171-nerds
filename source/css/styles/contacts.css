@@ -29,8 +29,12 @@
   z-index: 3;
   position: absolute;
   background: url("../../img/decoration/map-pin.png") 0 0 no-repeat;
-  top: 86px;
+  top: 90px;
   right: 389px;
+}
+
+.contacts__map-img {
+  display: block;
 }
 
 .contacts__list {
@@ -43,7 +47,7 @@
 
 .contacts__info {
   position: absolute;
-  top: 55px;
+  top: 58px;
   width: 320px;
   height: 310px;
   padding-top: 47px;
