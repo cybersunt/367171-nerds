@@ -1,8 +1,6 @@
 .pagination {
   width: 100%;
   min-height: 50px;
-
-  box-shadow: 0 0 5px navy;
 }
 
 .pagination__item {

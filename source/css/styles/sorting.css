@@ -21,9 +21,7 @@
   height: inherit;
   padding: 4px 0 6px;
   display: flex;
-  margin-right: 47px;
-
-  box-shadow: 0 0 5px red;
+  margin-right: 45px;
 }
 
 .sorting__item {
