@@ -1,6 +1,29 @@
 .goods {
   position: relative;
+  padding-top: 40px;
   margin-bottom: 33px;
+}
+
+.goods::before {
+  content: "";
+  width: 360px;
+  height: 40px;
+  background-image: url("../../img/decoration/browser.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.goods:hover::before {
+  opacity: 1;
+}
+
+.goods:hover .goods__hover,
+.goods:focus .goods__hover {
+  opacity: 1;
 }
 
 .goods__picture {
@@ -8,14 +31,14 @@
 }
 
 .goods__hover {
-  display: none;
+  opacity: 0;
   position: absolute;
   background-color: #eeeeee;
   width: 360px;
   height: 230px;
   padding: 31px 90px 43px;
-  top: 346px;
-  z-index: 2;
+  top: 386px;
+  z-index: 5;
   text-align: center;
 }
 
@@ -46,10 +69,5 @@
 }
 
 .goods__price {
-  display: block;
-}
-
-.goods__link-img:hover + .goods__hover,
-.goods__link-img:focus + .goods__hover {
   display: block;
 }

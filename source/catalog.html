@@ -116,11 +116,11 @@
               </li>
             </ul>
             <div class="sorting__arrows">
-              <a class="sorting__arrow sorting__arrow--down" href="#">
-                <span class="visually-hidden">Сверху вниз</span>
+              <a class="sorting__arrow sorting__arrow--down" href="#" aria-label="Сверху вниз">
+                <img src="img/sprite/icon-down-dir.svg" alt="">
               </a>
-              <a class="sorting__arrow sorting__arrow--up" href="#">
-                <span class="visually-hidden">Снизу вверх</span>
+              <a class="sorting__arrow sorting__arrow--up" href="#" aria-label="Снизу вверх">
+                <img src="img/sprite/icon-up-dir.svg" alt="">
               </a>
             </div>
           </section>
@@ -178,7 +178,7 @@
             </li>
             <li class="catalog__item goods">
             <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="img/content/img-kvast.jpg" alt="A Plus" width="360" height="576">
+              <img class="goods__picture" src="img/content/img-aplus.jpg" alt="A Plus" width="360" height="576">
             </a>
             <div class="goods__hover">
               <h3 class="goods__name">
@@ -190,7 +190,7 @@
             </li>
             <li class="catalog__item goods">
             <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="http://placehold.it/360x576" alt="Кваст" width="360" height="576">
+              <img class="goods__picture" src="img/content/img-kvast.jpg" alt="Кваст" width="360" height="576">
             </a>
             <div class="goods__hover">
               <h3 class="goods__name">
@@ -215,11 +215,8 @@
           </section>
         </div>
       </div>
-
-@@include('./_include/contacts.html')
-
     </main>
-
+@@include('./_include/contacts.html')
 @@include('./_include/footer.html')
 @@include('./_include/form-feedback.html')
   </body>
