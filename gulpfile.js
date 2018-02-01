@@ -7,18 +7,22 @@ var gulp = require('gulp'),
 
     postcss = require('gulp-postcss'),
     csso = require('gulp-csso'),
+
+    posthtml = require('gulp-posthtml'),
+    include = require('posthtml-include'),
     fileinclude = require('gulp-file-include'),
 
-    imagemin = require("gulp-imagemin"),
-    webp = require("gulp-webp"),
-    svgstore = require("gulp-svgstore"),
+    imagemin = require('gulp-imagemin'),
+    webp = require('gulp-webp'),
+    svgstore = require('gulp-svgstore'),
+    rsp = require('remove-svg-properties').stream,
 
     importcss = require('postcss-import'),
     urlcss = require('postcss-url'),
     autoprefixer = require('autoprefixer'),
     mqpacker = require('css-mqpacker'),
 
-    del = require("del"),
+    del = require('del'),
     browserSync = require('browser-sync').create();
 
 // ЗАДАЧА: Сборка HTML
@@ -29,6 +33,9 @@ gulp.task('markup', function() {
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest('./build/'));                      // записываем файлы (путь из константы)
 });
 
@@ -44,7 +51,7 @@ gulp.task('styles', function() {
     ]))
     .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
     .pipe(csso())                                      // минифицируем CSS-файл
-    .pipe(rename("style.min.css"))                     // переименовываем CSS-файл
+    .pipe(rename('style.min.css'))                     // переименовываем CSS-файл
     .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
     .pipe(browserSync.stream());
 });
@@ -58,7 +65,7 @@ gulp.task('images:decor', function() {
     imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
     imagemin.svgo()                                           // сжимаем SVG
   ]))
-  .pipe(gulp.dest('./public/img/decoration'));                   // записываем файлы
+  .pipe(gulp.dest('./build/img/decoration'));                   // записываем файлы
 });
 
 // ЗАДАЧА: Оптимизируем контентные PNG, JPG, SVG
@@ -70,7 +77,7 @@ gulp.task('images:content', function() {
     imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
     imagemin.svgo()                                           // сжимаем SVG
   ]))
-  .pipe(gulp.dest('./public/img/content'));                      // записываем файлы
+  .pipe(gulp.dest('./build/img/content'));                      // записываем файлы
 });
 
 // ЗАДАЧА: Создаем файлы WEBP для хромиум-браузеров
@@ -78,7 +85,7 @@ gulp.task('webp', function () {
   return gulp.src('./source/img/content/**/*.{png,jpg}')         // какие файлы обрабатывать
     .pipe(plumber())                                          // отлавливаем ошибки
     .pipe(webp({quality: 80}))                                // конвертируем в webp и определяем степень сжатия
-    .pipe(gulp.dest('./public/img/content'));                    // записываем файлы
+    .pipe(gulp.dest('./build/img/content'));                    // записываем файлы
 });
 
 // ЗАДАЧА: Создаем SVG-спрайт
@@ -92,10 +99,10 @@ gulp.task('sprite', function () {
       inlineSvg: true                                            // инлайним spite
     }))
     .pipe(rename('sprite.svg'))                               // даем имя спрайту
-    .pipe(gulp.dest('./public/img/'));                           // записываем файл
+    .pipe(gulp.dest('./build/img/'));                           // записываем файл
 });
 
-// ЗАДАЧА: Удаляем папку public
+// ЗАДАЧА: Удаляем папку build
 gulp.task('clean', function() {
   return del('./build');
 });
@@ -104,13 +111,14 @@ gulp.task('clean', function() {
 gulp.task('copy', function() {
   return gulp.src([
     './source/fonts/**',
-    './source/img/**',
+    './source/img/content/**',
+    './source/img/decoration/**',
     './source/js/**',
     './source/*.html'
   ], {
-    base: "./source"
+    base: './source'
   })
-  .pipe(gulp.dest("./build"));
+  .pipe(gulp.dest('./build'));
 });
 
 // ЗАДАЧА: Сборка всего и локальный сервер
@@ -142,6 +150,7 @@ gulp.task('default',
     'images:decor',
     'images:content',
     'webp',
+    'sprite',
   ),
   gulp.parallel(
     'watch',
