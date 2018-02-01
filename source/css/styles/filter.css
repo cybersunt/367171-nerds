@@ -1,37 +1,65 @@
 .filter__fieldset {
   border: 0;
   padding: 0;
-  margin-bottom: 52px;
 }
 
-.filter__fieldset:nth-of-type(2) {
-  height: 141px;
-  background-color: navy;
+.filter__fieldset--grids {
+  margin-bottom: 38px;
 }
 
-.filter__fieldset:nth-of-type(3) {
-  background-color: #880000;
-  height: 226px;
+.filter__fieldset--feautures {
+  margin-bottom: 45px;
 }
-
 
 .filter__title {
   font-weight: 500;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
-  margin-bottom: 49px
+  margin-bottom: 12px;
 }
 
 .filter__value {
   color: #283136;
-  display: block;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.filter__value:last-of-type {
+  margin-bottom: 0;
 }
 
 .filter__value:hover,
 .filter__value:focus {
   color: #000000;
   cursor: pointer;
+}
+
+.filter__value--checkbox {
+  margin-bottom: 19px;
+}
+
+.filter__value--checkbox:last-of-type {
+  margin-bottom: 0;
+}
+
+.filter__icon {
+  margin-right: 9px;
+}
+
+.filter__radio {
+  display: none;
+}
+
+.filter__radio:disabled + .filter__value {
+  color: rgba(40, 49, 54, 0.302);
+}
+
+.filter__checkbox {
+  display: none;
 }
 
 .filter__checkbox:disabled + .filter__value {
@@ -41,6 +69,7 @@
 .filter__btn {
   outline: 0;
   width: 260px;
+  padding: 14px 15px;
   background-color: #eeeeee;
   color: #000000;
   border: 2px solid transparent;

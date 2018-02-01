@@ -93,7 +93,7 @@
           <h2 class="visually-hidden">Фильтр товаров</h2>
           <form class="filter" method="get" action="https://echo.htmlacademy.ru">
             <fieldset class="filter__fieldset filter-price">
-              <legend class="filter__title">Стоимость</legend>
+              <legend class="filter__title filter-price__title">Стоимость</legend>
               <label class="visually-hidden" for="price">Шкала стоимости
                 <input type="range" id="price" name="price" min="0" max="15000" step="50">
               </label>
@@ -116,28 +116,75 @@
             </div>
             </fieldset>
 
-            <fieldset class="filter__fieldset">
+            <fieldset class="filter__fieldset filter__fieldset--grids">
               <legend class="filter__title">Сетка</legend>
               <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked="">
-              <label class="filter__value" for="adaptive">Адаптивная</label>
+              <label class="filter__value" for="adaptive">
+                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-1">
+                  <title id="title__radio-1">Выбрана адаптивную сетку</title>
+                  <use xlink:href="#radio-on"></use>
+                </svg>
+                <span>Адаптивная</span>
+              </label>
               <input class="filter__radio" name="grid" id="fixed" value="fixed" type="radio">
-              <label class="filter__value" for="fixed">Фиксированная</label>
+              <label class="filter__value" for="fixed">
+                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-2">
+                  <title id="title__radio-2">Выбрать фиксированную сетку</title>
+                  <use xlink:href="#radio-on"></use>
+                </svg>
+                <span>Фиксированная</span>
+            </label>
               <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio">
-              <label class="filter__value" for="rubber">Резиновая</label>
+              <label class="filter__value" for="rubber">
+                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-3">
+                  <title id="title__radio-3">Выбрать резиновую сетку</title>
+                  <use xlink:href="#radio-on"></use>
+                </svg>
+                <span>Резиновая</span></label>
             </fieldset>
 
-            <fieldset class="filter__fieldset">
+            <fieldset class="filter__fieldset filter__fieldset--feautures">
               <legend class="filter__title">Особенности</legend>
               <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked="">
-              <label class="filter__value" for="slider">Слайдер</label>
+              <label class="filter__value filter__value--checkbox" for="slider">
+                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
+                  <title id="title__checkbox-1">Выбран слайдер</title>
+                  <use xlink:href="#checkbox-on"></use>
+                </svg>
+                <span>Слайдер</span>
+              </label>
               <input class="filter__checkbox" name="advantages" id="advantages" type="checkbox">
-              <label class="filter__value" for="advantages">Блок преимуществ</label>
-              <input class="filter__checkbox" name="news" id="news" type="checkbox" checked="">
-              <label class="filter__value" for="news">Новости</label>
-              <input class="filter__checkbox" name="gallery" id="gallery" type="checkbox">
-              <label class="filter__value" for="gallery">Галерея</label>
-              <input class="filter__checkbox" name="basket" id="basket" type="checkbox">
-              <label class="filter__value" for="basket">Корзина</label>
+              <label class="filter__value filter__value--checkbox" for="advantages">
+                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
+                  <title id="title__checkbox-1">Выбран слайдер</title>
+                  <use xlink:href="#checkbox-on"></use>
+                </svg>
+                <span>Блок преимуществ</span>
+              </label>
+              <input class="filter__checkbox filter__value--checkbox" name="news" id="news" type="checkbox" checked="">
+              <label class="filter__value" for="news">
+                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
+                  <title id="title__checkbox-1">Выбран слайдер</title>
+                  <use xlink:href="#checkbox-on"></use>
+                </svg>
+                <span>Новости</span>
+              </label>
+              <input class="filter__checkbox filter__value--checkbox" name="gallery" id="gallery" type="checkbox">
+              <label class="filter__value" for="gallery">
+                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
+                  <title id="title__checkbox-1">Выбран слайдер</title>
+                  <use xlink:href="#checkbox-on"></use>
+                </svg>
+                <span>Галерея</span>
+              </label>
+              <input class="filter__checkbox filter__value--checkbox" name="basket" id="basket" type="checkbox">
+              <label class="filter__value" for="basket">
+                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
+                  <title id="title__checkbox-1">Выбран слайдер</title>
+                  <use xlink:href="#checkbox-on"></use>
+                </svg>
+                <span>Корзина</span>
+              </label>
             </fieldset>
             <button type="submit" class="btn filter__btn">Показать</button>
           </form>
