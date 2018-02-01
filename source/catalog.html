@@ -70,15 +70,15 @@
               <div class="filter-price__scale">
                 <div class="filter-price__bar"></div>
               </div>
-              <div class="filter-price__toggle filter-price__toggle--toggle-min"></div>
-              <div class="filter-price__toggle filter-price__toggle--toggle-max"></div>
+              <div class="filter-price__toggle filter-price__toggle--toggle-min" tabindex="0"></div>
+              <div class="filter-price__toggle filter-price__toggle--toggle-max" tabindex="0"></div>
             </div>
 
             <div class="filter-price__controls">
               <label class="filter-price__price" for="min-price"> от
                 <input type="text" class="filter-price__input" id="min-price" value="0"/>
               </label>
-              <label class="filter-price__price filter-price__price--max" for="max-price"> до
+              <label class="filter-price__price filter-price__price--max" for="max-price"   > до
                 <input type="text" class="filter-price__input" id="max-price" value="15 000"/>
               </label>
             </div>
@@ -87,26 +87,29 @@
             <fieldset class="filter__fieldset filter__fieldset--grids">
               <legend class="filter__title">Сетка</legend>
               <input class="filter__radio" name="grid" id="adaptive" value="adaptive" type="radio" checked/>
-              <label class="filter__value" for="adaptive">
-                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-1">
-                  <title id="title__radio-1">Выбрана адаптивную сетку</title>
-                  <use xlink:href="#radio-on"></use>
+              <label class="filter__value" for="adaptive" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--radio" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 25">
+                  <path d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0
+    C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"/>
+                  <circle cx="12.5" cy="12.5" r="4.5"/>
                 </svg>
                 <span>Адаптивная</span>
               </label>
               <input class="filter__radio" name="grid" id="fixed" value="fixed" type="radio"/>
-              <label class="filter__value" for="fixed">
-                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-2">
-                  <title id="title__radio-2">Выбрать фиксированную сетку</title>
-                  <use xlink:href="#radio-on"></use>
+              <label class="filter__value" for="fixed" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--radio" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 25">
+                  <path d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0
+    C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"/>
+                  <circle cx="12.5" cy="12.5" r="4.5"/>
                 </svg>
                 <span>Фиксированная</span>
             </label>
               <input class="filter__radio" name="grid" id="rubber" value="rubber" type="radio"/>
-              <label class="filter__value" for="rubber">
-                <svg class="filter__icon" width="25px" height="25px" aria-labelledby="title__radio-3">
-                  <title id="title__radio-3">Выбрать резиновую сетку</title>
-                  <use xlink:href="#radio-on"></use>
+              <label class="filter__value" for="rubber" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--radio" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 25">
+                  <path d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0
+    C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"/>
+                  <circle cx="12.5" cy="12.5" r="4.5"/>
                 </svg>
                 <span>Резиновая</span></label>
             </fieldset>
@@ -114,42 +117,67 @@
             <fieldset class="filter__fieldset filter__fieldset--feautures">
               <legend class="filter__title">Особенности</legend>
               <input class="filter__checkbox" name="slider" id="slider" type="checkbox" checked/>
-              <label class="filter__value filter__value--checkbox" for="slider">
-                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
-                  <title id="title__checkbox-1">Выбран слайдер</title>
-                  <use xlink:href="#checkbox-on"></use>
+              <label class="filter__value filter__value--checkbox" for="slider" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--checkbox" xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 0 27 23">
+                  <g>
+                    <polygon class="checkbox-on" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "/>
+                    <path class="checkbox-on" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                    <path class="checkbox-off" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                  </g>
                 </svg>
                 <span>Слайдер</span>
               </label>
               <input class="filter__checkbox" name="advantages" id="advantages" type="checkbox"/>
-              <label class="filter__value filter__value--checkbox" for="advantages">
-                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
-                  <title id="title__checkbox-1">Выбран слайдер</title>
-                  <use xlink:href="#checkbox-on"></use>
+              <label class="filter__value filter__value--checkbox" for="advantages" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--checkbox" xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 0 27 23">
+                  <g>
+                    <polygon class="checkbox-on" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "/>
+                    <path class="checkbox-on" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                    <path class="checkbox-off" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                  </g>
                 </svg>
                 <span>Блок преимуществ</span>
               </label>
               <input class="filter__checkbox filter__value--checkbox" name="news" id="news" type="checkbox" checked/>
-              <label class="filter__value" for="news">
-                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
-                  <title id="title__checkbox-1">Выбран слайдер</title>
-                  <use xlink:href="#checkbox-on"></use>
+              <label class="filter__value" for="news" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--checkbox" xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 0 27 23">
+                  <g>
+                    <polygon class="checkbox-on" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "/>
+                    <path class="checkbox-on" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                    <path class="checkbox-off" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                  </g>
                 </svg>
                 <span>Новости</span>
               </label>
               <input class="filter__checkbox filter__value--checkbox" name="gallery" id="gallery" type="checkbox"/>
-              <label class="filter__value" for="gallery">
-                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
-                  <title id="title__checkbox-1">Выбран слайдер</title>
-                  <use xlink:href="#checkbox-on"></use>
+              <label class="filter__value" for="gallery" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--checkbox" xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 0 27 23">
+                  <g>
+                    <polygon class="checkbox-on" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "/>
+                    <path class="checkbox-on" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                    <path class="checkbox-off" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                  </g>
                 </svg>
                 <span>Галерея</span>
               </label>
               <input class="filter__checkbox filter__value--checkbox" name="basket" id="basket" type="checkbox"/>
-              <label class="filter__value" for="basket">
-                <svg class="filter__icon" width="27px" height="23px" aria-labelledby="title__checkbox-1">
-                  <title id="title__checkbox-1">Выбран слайдер</title>
-                  <use xlink:href="#checkbox-on"></use>
+              <label class="filter__value" for="basket" onmousedown="return false" tabindex="0">
+                <svg class="filter__icon filter__icon--checkbox" xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 0 27 23">
+                  <g>
+                    <polygon class="checkbox-on" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "/>
+                    <path class="checkbox-on" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                    <path class="checkbox-off" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                  </g>
                 </svg>
                 <span>Корзина</span>
               </label>

@@ -22,7 +22,8 @@
   z-index: 5;
 }
 
-.goods:hover::before {
+.goods:hover::before,
+.goods:focus::before {
   opacity: 1;
 }
 
