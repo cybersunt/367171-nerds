@@ -33,34 +33,34 @@ var gulp = require('gulp'),
 
 // ЗАДАЧА: Сборка HTML
 gulp.task('markup', function() {
-  return gulp.src('./source/*.html')                   // какие файлы обрабатывать
+  return gulp.src('./source/*.html')
     .pipe(plumber())
-    .pipe(fileinclude({                                // обрабатываем gulp-file-include
+    .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest('./public/'));                      // записываем файлы (путь из константы)
+    .pipe(gulp.dest('./public/'));
 });
 
 // ЗАДАЧА: Компиляция CSS
 gulp.task('styles', function() {
-  return gulp.src('./source/css/path/style.css')       // какой файл компилировать
-    .pipe(plumber())                                   // отлавливаем ошибки
+  return gulp.src('./source/css/path/style.css')
+    .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(postcss([                                    // делаем постпроцессинг
+    .pipe(postcss([
       importcss(),                                     // импортируем пути
       urlcss(),                                        // правит пути
       autoprefixer({ browsers: ['last 2 version'] }),  // автопрефиксирование
       mqpacker({ sort: true })                         // объединение медиавыражений
     ]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css'))                    // записываем CSS-файл
-    .pipe(csso())                                      // минифицируем CSS-файл
-    .pipe(rename('style.min.css'))                     // переименовываем CSS-файл
-    .pipe(gulp.dest('./public/css'))                    // записываем CSS-файл
+    .pipe(gulp.dest('./public/css'))
+    .pipe(csso())
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('./public/css'))
     .pipe(browserSync.stream());
 });
 
@@ -80,47 +80,47 @@ gulp.task('scripts', function () {
 // ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
 gulp.task('images:decor', function() {
   return gulp.src('./source/img/decoration/**/*.{png,jpg,jpeg,svg}')
-  .pipe(plumber())                                            // отлавливаем ошибки
+  .pipe(plumber())
   .pipe(imagemin([
-    imagemin.jpegtran({progressive: true}),                   // сжимаем PNG
-    imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
-    imagemin.svgo()                                           // сжимаем SVG
+    imagemin.jpegtran({progressive: true}),
+    imagemin.optipng({optimizationLevel: 3}),
+    imagemin.svgo()
   ]))
-  .pipe(gulp.dest('./public/img/decoration'));                   // записываем файлы
+  .pipe(gulp.dest('./public/img/decoration'));
 });
 
 // ЗАДАЧА: Оптимизируем контентные PNG, JPG, SVG
 gulp.task('images:content', function() {
   return gulp.src('./source/img/content/**/*.{png,jpg,jpeg,svg}')
-  .pipe(plumber())                                            // отлавливаем ошибки
+  .pipe(plumber())
   .pipe(imagemin([
-    imagemin.jpegtran({progressive: true}),                   // сжимаем PNG
-    imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
-    imagemin.svgo()                                           // сжимаем SVG
+    imagemin.jpegtran({progressive: true}),
+    imagemin.optipng({optimizationLevel: 3}),
+    imagemin.svgo()
   ]))
-  .pipe(gulp.dest('./public/img/content'));                      // записываем файлы
+  .pipe(gulp.dest('./public/img/content'));
 });
 
 // ЗАДАЧА: Создаем файлы WEBP для хромиум-браузеров
 gulp.task('webp', function () {
-  return gulp.src('./source/img/content/**/*.{png,jpg}')         // какие файлы обрабатывать
-    .pipe(plumber())                                          // отлавливаем ошибки
-    .pipe(webp({quality: 80}))                                // конвертируем в webp и определяем степень сжатия
-    .pipe(gulp.dest('./public/img/content'));                    // записываем файлы
+  return gulp.src('./source/img/content/**/*.{png,jpg}')
+    .pipe(plumber())
+    .pipe(webp({quality: 80}))
+    .pipe(gulp.dest('./public/img/content'));
 });
 
 // ЗАДАЧА: Создаем SVG-спрайт
 gulp.task('sprite', function () {
-  return gulp.src('./source/img/sprite/*.svg')                   // какие файлы обрабатывать
-    .pipe(plumber())                                          // отлавливаем ошибки
-    .pipe(rsp.remove({                                           // удаляем атрибуты
+  return gulp.src('./source/img/sprite/*.svg')
+    .pipe(plumber())
+    .pipe(rsp.remove({
         properties: [rsp.PROPS_FILL]
     }))
     .pipe(svgstore({
-      inlineSvg: true                                            // инлайним spite
+      inlineSvg: true
     }))
-    .pipe(rename('sprite.svg'))                               // даем имя спрайту
-    .pipe(gulp.dest('./public/img/'));                           // записываем файл
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('./public/img/'));
 });
 
 // ЗАДАЧА: Удаляем папку public
@@ -183,4 +183,3 @@ gulp.task('default',
     'serve'
   )
 ));
-
