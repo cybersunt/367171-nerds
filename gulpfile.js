@@ -4,6 +4,8 @@
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
 
     postcss = require('gulp-postcss'),
     csso = require('gulp-csso'),
@@ -17,10 +19,14 @@ var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     rsp = require('remove-svg-properties').stream,
 
+
     importcss = require('postcss-import'),
     urlcss = require('postcss-url'),
     autoprefixer = require('autoprefixer'),
     mqpacker = require('css-mqpacker'),
+
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
 
     del = require('del'),
     browserSync = require('browser-sync').create();
@@ -36,25 +42,40 @@ gulp.task('markup', function() {
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest('./build/'));                      // записываем файлы (путь из константы)
+    .pipe(gulp.dest('./public/'));                      // записываем файлы (путь из константы)
 });
 
 // ЗАДАЧА: Компиляция CSS
 gulp.task('styles', function() {
   return gulp.src('./source/css/path/style.css')       // какой файл компилировать
     .pipe(plumber())                                   // отлавливаем ошибки
+    .pipe(sourcemaps.init())
     .pipe(postcss([                                    // делаем постпроцессинг
       importcss(),                                     // импортируем пути
       urlcss(),                                        // правит пути
       autoprefixer({ browsers: ['last 2 version'] }),  // автопрефиксирование
       mqpacker({ sort: true })                         // объединение медиавыражений
     ]))
-    .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./public/css'))                    // записываем CSS-файл
     .pipe(csso())                                      // минифицируем CSS-файл
     .pipe(rename('style.min.css'))                     // переименовываем CSS-файл
-    .pipe(gulp.dest('./build/css'))                    // записываем CSS-файл
+    .pipe(gulp.dest('./public/css'))                    // записываем CSS-файл
     .pipe(browserSync.stream());
 });
+
+// ЗАДАЧА: Минимизируем JS
+gulp.task('scripts', function () {
+  return gulp.src('./source/js/**/*.js')
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(concat('scripts.js'))
+    .pipe(sourcemaps.write())
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./public/js/'))
+});
+
 
 // ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
 gulp.task('images:decor', function() {
@@ -65,7 +86,7 @@ gulp.task('images:decor', function() {
     imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
     imagemin.svgo()                                           // сжимаем SVG
   ]))
-  .pipe(gulp.dest('./build/img/decoration'));                   // записываем файлы
+  .pipe(gulp.dest('./public/img/decoration'));                   // записываем файлы
 });
 
 // ЗАДАЧА: Оптимизируем контентные PNG, JPG, SVG
@@ -77,7 +98,7 @@ gulp.task('images:content', function() {
     imagemin.optipng({optimizationLevel: 3}),                 // сжимаем PNG и определяем степень сжатия
     imagemin.svgo()                                           // сжимаем SVG
   ]))
-  .pipe(gulp.dest('./build/img/content'));                      // записываем файлы
+  .pipe(gulp.dest('./public/img/content'));                      // записываем файлы
 });
 
 // ЗАДАЧА: Создаем файлы WEBP для хромиум-браузеров
@@ -85,7 +106,7 @@ gulp.task('webp', function () {
   return gulp.src('./source/img/content/**/*.{png,jpg}')         // какие файлы обрабатывать
     .pipe(plumber())                                          // отлавливаем ошибки
     .pipe(webp({quality: 80}))                                // конвертируем в webp и определяем степень сжатия
-    .pipe(gulp.dest('./build/img/content'));                    // записываем файлы
+    .pipe(gulp.dest('./public/img/content'));                    // записываем файлы
 });
 
 // ЗАДАЧА: Создаем SVG-спрайт
@@ -99,12 +120,12 @@ gulp.task('sprite', function () {
       inlineSvg: true                                            // инлайним spite
     }))
     .pipe(rename('sprite.svg'))                               // даем имя спрайту
-    .pipe(gulp.dest('./build/img/'));                           // записываем файл
+    .pipe(gulp.dest('./public/img/'));                           // записываем файл
 });
 
-// ЗАДАЧА: Удаляем папку build
+// ЗАДАЧА: Удаляем папку public
 gulp.task('clean', function() {
-  return del('./build');
+  return del('./public');
 });
 
 // ЗАДАЧА: Копирование файлов
@@ -118,7 +139,7 @@ gulp.task('copy', function() {
   ], {
     base: './source'
   })
-  .pipe(gulp.dest('./build'));
+  .pipe(gulp.dest('./public'));
 });
 
 // ЗАДАЧА: Сборка всего и локальный сервер
@@ -126,18 +147,22 @@ gulp.task('serve', function() {
     browserSync.init({
       open: true,
       server: {
-        baseDir: 'build/',
+        baseDir: 'public/',
         index: 'index.html'
      }
     });
-    browserSync.watch(['./build/**/*.*'], browserSync.reload);
+    browserSync.watch(['./public/**/*.*'], browserSync.reload);
   });
 
 gulp.task('watch', function() {
-  gulp.watch('./source/css/**/*.css', gulp.series('styles'));    // следим за CSS
   gulp.watch('./source/**/*.html', gulp.series('markup'));         // следим за HTML
-  gulp.watch('./source/img/**', gulp.series('copy'));            // следим за картинками
-  });
+  gulp.watch('./source/css/**/*.css', gulp.series('styles'));       // следим за CSS
+  gulp.watch('./source/js/**/*.js', gulp.series('scripts'));
+  gulp.watch('./source/img/content/**/*.*', gulp.series('images:content'));
+  gulp.watch('./source/img/decoration/**/*.*', gulp.series('images:decor'));
+  gulp.watch('./source/img/content/**/*.*', gulp.series('webp'));
+  gulp.watch('./source/img/sprite/**/*.*', gulp.series('sprite'));
+});
 
 // ЗАДАЧА: Сборка всего и локальный сервер
 gulp.task('default',
@@ -145,12 +170,13 @@ gulp.task('default',
     'clean',
     'copy',
     'markup',
+    'sprite',
+    'scripts',
   gulp.parallel(
     'styles',
     'images:decor',
     'images:content',
     'webp',
-    'sprite',
   ),
   gulp.parallel(
     'watch',
