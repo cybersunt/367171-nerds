@@ -46,7 +46,8 @@
   margin-bottom: 0;
 }
 
-.filter__value:hover > .filter__icon {
+.filter__value:hover > .filter__icon,
+.filter__value:focus > .filter__icon {
   fill: #4d4d4d;
 }
 
