@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
+
+    <div style="display:none">
+        <include src="public/img/sprite.svg"></include>
+    </div>
+
     <header class="header">
       <div class="header__wrap">
 
@@ -31,7 +36,10 @@
           </ul>
           <div class="user-nav">
             <a class="user-nav__link" href="#">
-              <!-- svg icon -->
+              <svg class="user-list__icon" width="15px" height="15px" aria-labelledby="title__cart">
+                <title id="title__cart">Добавить в корзину</title>
+                <use xlink:href="#icon-cart"></use>
+              </svg>
               Корзина
             </a>
           </div>

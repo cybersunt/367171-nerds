@@ -169,8 +169,8 @@ gulp.task('default',
   gulp.series(
     'clean',
     'copy',
-    'markup',
     'sprite',
+    'markup',
     'scripts',
   gulp.parallel(
     'styles',

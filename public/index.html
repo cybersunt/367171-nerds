@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
+
+    <div style="display:none">
+        <svg xmlns="http://www.w3.org/2000/svg"><symbol id="cart-icon" viewbox="0 0 15 15">
+  <g>
+    <circle cx="4.5" cy="13.5" r="1.5"></circle>
+    <circle cx="12.5" cy="13.5" r="1.5"></circle>
+    <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951   "></polygon>
+  </g>
+</symbol><symbol id="checkbox-off" viewbox="0 0 23 23">
+  <path d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3
+    C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"></path>
+</symbol><symbol id="checkbox-on" viewbox="0 0 27 23">
+  <g>
+    <polygon points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439         "></polygon>
+    <path d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0
+            H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"></path>
+    </g>
+</symbol><symbol id="close-cross" viewbox="0 0 21 21"><path d="M13.328 10.5l7.371-7.371a1.003 1.003 0 0 0 0-1.414L19.285.3a1.003 1.003 0 0 0-1.414 0L10.5 7.672 3.129.301a1.003 1.003 0 0 0-1.414 0L.301 1.715a1.003 1.003 0 0 0 0 1.414L7.672 10.5.301 17.871a1.003 1.003 0 0 0 0 1.414l1.415 1.414a1.003 1.003 0 0 0 1.414 0l7.371-7.371 7.371 7.371a1.003 1.003 0 0 0 1.414 0l1.414-1.414a1.003 1.003 0 0 0 0-1.414L13.328 10.5z"></path></symbol><symbol id="fb-icon" viewbox="0 0 12 22"><path d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"></path></symbol><symbol id="icon-cart" viewbox="0 0 15 15">
+  <g>
+    <circle cx="4.5" cy="13.5" r="1.5"></circle>
+    <circle cx="12.5" cy="13.5" r="1.5"></circle>
+    <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951   "></polygon>
+  </g>
+</symbol><symbol id="icon-down-dir" viewbox="0 0 11 10">
+  <polyline points="5.5,10 0,0 11,0 "></polyline>
+</symbol><symbol id="icon-up-dir" viewbox="0 0 11 10">
+  <polygon points="5.5,0 0,10 11,10 "></polygon>
+</symbol><symbol id="insta-icon" viewbox="0 0 21 21"><path d="M18 0H3C1.35 0 0 1.35 0 3v15c0 1.65 1.35 3 3 3h15c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zm-7.5 7c1.93 0 3.5 1.57 3.5 3.5S12.43 14 10.5 14 7 12.43 7 10.5 8.57 7 10.5 7zM18 18H3V9h1.181A6.504 6.504 0 0 0 4 10.5a6.5 6.5 0 1 0 13 0 6.45 6.45 0 0 0-.181-1.5H18v9zm0-11h-4V3h4v4z"></path></symbol><symbol id="radio-off" viewbox="0 0 25 25">
+  <path d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0
+    C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"></path>
+</symbol><symbol id="radio-on" viewbox="0 0 25 25">
+  <path d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0
+    C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"></path>
+  <circle cx="12.5" cy="12.5" r="4.5"></circle>
+</symbol><symbol id="vk-icon" viewbox="0 0 26 15"><path d="M16.138 11.51c.956-.309 2.18 2.04 3.483 2.939.978.681 1.727.534 1.727.534l3.473-.05s1.815-.112.957-1.554c-.071-.12-.503-1.069-2.585-3.022-2.177-2.043-1.882-1.712.739-5.244 1.597-2.153 2.236-3.468 2.036-4.028-.192-.539-1.365-.399-1.365-.399L20.69.713c-.381.001-.704.119-.851.515-.003.004-.621 1.666-1.445 3.079-1.741 2.989-2.436 3.148-2.724 2.961-.661-.433-.494-1.737-.494-2.664 0-2.897.432-4.105-.846-4.417-.427-.104-.739-.172-1.828-.182-1.392-.021-2.574 0-3.244.329-.445.223-.786.712-.579.74.26.035.843.16 1.155.586.401.552.389 1.789.389 1.789s.229 3.411-.54 3.834c-.528.29-1.25-.302-2.803-3.016-.793-1.388-1.392-2.922-1.392-2.922s-.116-.285-.326-.441c-.25-.185-.6-.244-.6-.244L.848.684S.29.7.085.946c-.182.218-.015.668-.015.668s2.909 6.881 6.203 10.347c3.02 3.182 6.452 2.971 6.452 2.971h1.555s.469-.054.709-.312c.224-.24.214-.691.214-.691s-.031-2.109.935-2.419z"></path></symbol></svg>
+    </div>
+
     <header class="header">
       <div class="header__wrap">
 
@@ -31,7 +68,10 @@
           </ul>
           <div class="user-nav">
             <a class="user-nav__link" href="#">
-              <!-- svg icon -->
+              <svg class="user-list__icon" width="15px" height="15px" aria-labelledby="title__cart">
+                <title id="title__cart">Добавить в корзину</title>
+                <use xlink:href="#icon-cart"></use>
+              </svg>
               Корзина
             </a>
           </div>
@@ -204,17 +244,26 @@
         <ul class="social">
           <li class="social__item">
             <a class="social__link" href="https://vk.com" aria-label="Мы во Вконтакте">
-              <!-- svg icon -->
+              <svg class="social__icon" width="26px" height="15px" aria-labelledby="Мы во Вконтакте">
+                <title id="title__twitter">Мы во Вконтакте</title>
+                <use xlink:href="#vk-icon"></use>
+              </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link" href="https://facebook.com" aria-label="Мы в Facebook">
-              <!-- svg icon -->
+              <svg class="social__icon" width="12px" height="22px" aria-labelledby="title__facebook">
+                <title id="title__facebook">Мы в Facebook</title>
+                <use xlink:href="#fb-icon"></use>
+              </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link" href="https://instagram.com" aria-label="Мы в Instagram">
-              <!-- svg icon -->
+              <svg class="social__icon" width="21px" height="21" aria-labelledby="title__instagram">
+                <title id="title__instagram">Мы в Instagram</title>
+                <use xlink:href="#insta-icon"></use>
+              </svg>
             </a>
           </li>
         </ul>

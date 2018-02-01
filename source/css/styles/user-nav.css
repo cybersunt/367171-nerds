@@ -20,3 +20,17 @@
 .user-nav__link:active {
   color: rgba(0, 0, 0, 0.3);
 }
+
+.user-nav__link:hover > .user-list__icon,
+.user-nav__link:focus > .user-list__icon {
+  fill: #fb565a;
+}
+
+.user-nav__link:active > .user-list__icon {
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+.user-list__icon {
+  margin-right: 23px;
+  fill: #000000;
+}

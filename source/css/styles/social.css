@@ -19,11 +19,13 @@
 }
 
 .social__link {
-  display: block;
   border-radius: 50%;
   width: 80px;
   height: 80px;
   background-color: #e1e1e1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social__link:hover,
@@ -36,6 +38,11 @@
   box-shadow: inset 0px 3px 0px 0px rgba(0, 1, 1, 0.1);
 }
 
+.social__link:active > .social__icon {
+  fill: #e37376;
+}
+
 .social__icon {
   display: block;
+  fill: #ffffff;
 }
