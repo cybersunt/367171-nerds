@@ -67,8 +67,8 @@
               <div class="filter-price__scale">
                 <div class="filter-price__bar"></div>
               </div>
-              <div class="filter-price__toggle filter-price__toggle--toggle-min" tabindex="0"></div>
-              <div class="filter-price__toggle filter-price__toggle--toggle-max" tabindex="0"></div>
+              <button class="filter-price__toggle filter-price__toggle--toggle-min"></button>
+              <buttom class="filter-price__toggle filter-price__toggle--toggle-max"></buttom>
             </div>
 
             <div class="filter-price__controls">
@@ -200,10 +200,16 @@
             </ul>
             <div class="sorting__arrows">
               <a class="sorting__arrow sorting__arrow--down" href="#" aria-label="Сверху вниз">
-                <img src="img/sprite/icon-down-dir.svg" alt="">
+                <svg class="sorting__arrow-icon" width="11px" height="10px" aria-labelledby="sorting__titele-icon-down">
+                  <title id="sorting__titele-icon-down">Сверху вниз</title>
+                  <use xlink:href="#icon-down"></use>
+              </svg>
               </a>
               <a class="sorting__arrow sorting__arrow--up" href="#" aria-label="Снизу вверх">
-                <img src="img/sprite/icon-up-dir.svg" alt="">
+                <svg class="sorting__arrow-icon" width="11px" height="10px" aria-labelledby="sorting__titele-icon-up">
+                  <title id="sorting__titele-icon-uo">Снизe вверх</title>
+                  <use xlink:href="#icon-up"></use>
+              </svg>
               </a>
             </div>
           </section>

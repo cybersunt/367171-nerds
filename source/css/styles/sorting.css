@@ -63,3 +63,16 @@
 .sorting__arrow:last-child {
   margin-right: 0;
 }
+
+.sorting__arrow:hover .sorting__arrow-icon,
+.sorting__arrow:focus .sorting__arrow-icon {
+  fill: #a6a6a6;
+}
+
+.sorting__arrow:active .sorting__arrow-icon {
+  fill: #231f20;
+}
+
+.sorting__arrow-icon {
+  fill: #ededed;
+}

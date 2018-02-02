@@ -60,14 +60,6 @@
   opacity: 0;
 }
 
-.checkbox .checkbox__on {
-  opacity: 0;
-}
-
-.checkbox .checkbox__off {
-  opacity: 1;
-}
-
 .filter__radio {
   display: none;
 }
