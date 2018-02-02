@@ -1,0 +1,7 @@
+.checkbox .checkbox__on {
+  opacity: 0;
+}
+
+.checkbox .checkbox__off {
+  opacity: 1;
+}

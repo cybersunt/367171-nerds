@@ -60,11 +60,11 @@
   opacity: 0;
 }
 
-.filter__icon--checkbox .checkbox-on {
+.checkbox .checkbox__on {
   opacity: 0;
 }
 
-.filter__icon--checkbox .checkbox-off {
+.checkbox .checkbox__off {
   opacity: 1;
 }
 
@@ -96,11 +96,11 @@
   fill: #ededed;
 }
 
-.filter__checkbox:checked + .filter__value > .filter__icon--checkbox .checkbox-on {
+.filter__checkbox:checked + .filter__value > .checkbox .checkbox__on {
   opacity: 1;
 }
 
-.filter__checkbox:checked + .filter__value > .filter__icon--checkbox .checkbox-off {
+.filter__checkbox:checked + .filter__value > .checkbox .checkbox__off {
   opacity: 0;
 }
 
