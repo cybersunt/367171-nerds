@@ -1,5 +1,5 @@
 .header {
-  width: 1440px;
+  width: 100%;
   padding-left: 140px;
   padding-right: 140px;
   min-height: 116px;
@@ -18,6 +18,15 @@
   width: 160px;
   height: 65px;
   margin-right: 202px;
+}
+
+a.header__logo:hover,
+a.header__logo:focus {
+  opacity: 0.797;
+}
+
+a.header__logo:active {
+  opacity: 0.3;
 }
 
 .header__img {
