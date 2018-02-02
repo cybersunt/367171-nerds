@@ -273,7 +273,12 @@
             </label>
             <button class="btn feedback__send" type="submit">Отправить</button>
           </form>
-          <button type="button" class="feedback__close" aria-label="Закрыть"></button>
+          <button type="button" class="feedback__close" aria-label="Закрыть">
+            <svg class="feedback__close-icon" width="21" height="21" aria-labelledby="feedback__close-title">
+              <title id="feedback__close-title">Закрыть</title>
+              <use xlink:href="#close-cross"></use>
+            </svg>
+          </button>
         </div>
       </section>
 
