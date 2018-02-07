@@ -69,13 +69,13 @@ gulp.task('scripts', function () {
   return gulp.src('./source/js/**/*.js')
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(concat('scripts.js'))
+    // .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('./public/js/'))
     .pipe(sourcemaps.write())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./public/js/'))
 });
-
 
 // ЗАДАЧА: Оптимизируем декоративные PNG, JPG, SVG
 gulp.task('images:decor', function() {
@@ -170,9 +170,9 @@ gulp.task('default',
     'clean',
     'copy',
     'sprite',
+  gulp.parallel(
     'markup',
     'scripts',
-  gulp.parallel(
     'styles',
     'images:decor',
     'images:content',

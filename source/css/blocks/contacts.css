@@ -18,12 +18,23 @@
 
 .contacts__map {
   width: 1440px;
+  height: 418px;
   margin-left: -140px;
   margin-right: -140px;
   position: relative;
 }
 
-.contacts__map::before {
+.contacts__map-img {
+  width: 1440px;
+  height: 418px;
+  display: block;
+}
+
+.contacts__map-img--hidden {
+  display: none;
+}
+
+.contacts__map-img::before {
   content: "";
   width: 231px;
   height: 190px;
@@ -32,10 +43,6 @@
   background: url("../img/decoration/map-pin.png") 0 0 no-repeat;
   top: 90px;
   right: 389px;
-}
-
-.contacts__map-img {
-  display: block;
 }
 
 .contacts__list {

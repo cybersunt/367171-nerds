@@ -318,8 +318,11 @@
       <section class="contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <div class="contacts__wrap">
-          <div class="contacts__map" id="map">
-            <img class="contacts__map-img" src="img/content/map.jpg" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург" width="1440" height="418">
+          <div class="contacts__map" id="map" style="width: 1440px; height: 418px">
+            <picture class="contacts__map-img">
+              <source type="image/webp" srcset="img/content/map.webp">
+              <img class="contacts__map-img" src="img/content/map.jpg" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
+            </picture>
           </div>
           <div class="contacts__info">
             <p class="contacts__name">Nёrds Design Studio</p>
@@ -396,5 +399,8 @@
         </div>
       </section>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
+    <script src="js/map.js"></script>
   </body>
 </html>
