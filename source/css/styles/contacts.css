@@ -29,7 +29,7 @@
   height: 190px;
   z-index: 3;
   position: absolute;
-  background: url("../../img/decoration/map-pin.png") 0 0 no-repeat;
+  background: url("../img/decoration/map-pin.png") 0 0 no-repeat;
   top: 90px;
   right: 389px;
 }
