@@ -66,10 +66,13 @@ gulp.task('styles', function() {
 
 // ЗАДАЧА: Минимизируем JS
 gulp.task('scripts', function () {
-  return gulp.src('./source/js/**/*.js')
+  return gulp.src([
+    './source/js/map.js'
+    // './source/js/slider.js'
+    ])
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    // .pipe(concat('scripts.js'))
+    .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./public/js/'))
     .pipe(sourcemaps.write())
     .pipe(uglify())
