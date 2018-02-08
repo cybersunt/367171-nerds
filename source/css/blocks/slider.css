@@ -24,15 +24,18 @@
 
 .slider__item {
   display: none;
+  position: relative;
 }
 
 .slider__item--active {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .slider__info {
-  width: 520px;
+  position: absolute;
+  left: 0;
+  width: 530px;
 }
 
 .slider__caption {
