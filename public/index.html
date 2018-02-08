@@ -5,11 +5,6 @@
     <title>Дизайн-студия Nerds - Главная</title>
     <meta name="description" content="Макет учебного проекта Нёрдс взят с интенсива HTMLADEMY - Базовый HTML и CSS#18">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-      // Picture element HTML5 shiv
-      document.createElement( "picture" );
-    </script>
-    <script src="picturefill.js" async></script>
   </head>
   <body class="page">
 
@@ -27,7 +22,7 @@
 </symbol><symbol id="insta-icon" viewbox="0 0 21 21"><path d="M18 0H3C1.35 0 0 1.35 0 3v15c0 1.65 1.35 3 3 3h15c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zm-7.5 7c1.93 0 3.5 1.57 3.5 3.5S12.43 14 10.5 14 7 12.43 7 10.5 8.57 7 10.5 7zM18 18H3V9h1.181A6.504 6.504 0 0 0 4 10.5a6.5 6.5 0 1 0 13 0 6.45 6.45 0 0 0-.181-1.5H18v9zm0-11h-4V3h4v4z"></path></symbol><symbol id="vk-icon" viewbox="0 0 26 15"><path d="M16.138 11.51c.956-.309 2.18 2.04 3.483 2.939.978.681 1.727.534 1.727.534l3.473-.05s1.815-.112.957-1.554c-.071-.12-.503-1.069-2.585-3.022-2.177-2.043-1.882-1.712.739-5.244 1.597-2.153 2.236-3.468 2.036-4.028-.192-.539-1.365-.399-1.365-.399L20.69.713c-.381.001-.704.119-.851.515-.003.004-.621 1.666-1.445 3.079-1.741 2.989-2.436 3.148-2.724 2.961-.661-.433-.494-1.737-.494-2.664 0-2.897.432-4.105-.846-4.417-.427-.104-.739-.172-1.828-.182-1.392-.021-2.574 0-3.244.329-.445.223-.786.712-.579.74.26.035.843.16 1.155.586.401.552.389 1.789.389 1.789s.229 3.411-.54 3.834c-.528.29-1.25-.302-2.803-3.016-.793-1.388-1.392-2.922-1.392-2.922s-.116-.285-.326-.441c-.25-.185-.6-.244-.6-.244L.848.684S.29.7.085.946c-.182.218-.015.668-.015.668s2.909 6.881 6.203 10.347c3.02 3.182 6.452 2.971 6.452 2.971h1.555s.469-.054.709-.312c.224-.24.214-.691.214-.691s-.031-2.109.935-2.419z"></path></symbol></svg>
     </div>
 
-    <header class="header">
+ <header class="header">
       <div class="header__wrap">
 
         <div class="header__logo">
@@ -76,7 +71,10 @@
                 <p class="slider__desc">Математически выверенный дизайн <br>для вашего сайта или мобильного приложения.</p>
                 <a class="btn slider__btn" href="#">Узнать больше</a>
               </div>
-              <img class="slider__img" src="img/content/slide1.png" alt="Мобильные телефоны" width="760" height="431">
+              <picture class="slider__img">
+                <source type="image/webp" srcset="img/content/slide1.webp">
+                <img src="img/content/slide1.png" alt="Мобильные телефоны">
+              </picture>
             </li>
             <li class="slider__item">
               <div class="slider__info">
@@ -84,7 +82,10 @@
                 <p class="slider__desc">Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
                 <a class="btn slider__btn" href="#">Узнать больше</a>
               </div>
-              <img class="slider__img" src="img/content/slide2.png" alt="Мониторы" width="760" height="431">
+              <picture class="slider__img">
+                <source type="image/webp" srcset="img/content/slide2.webp">
+                <img src="img/content/slide1.png" alt="Мониторы">
+              </picture>
             </li>
             <li class="slider__item">
               <div class="slider__info">
@@ -92,19 +93,16 @@
                 <p class="slider__desc">Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
                 <a class="btn slider__btn" href="#">Узнать больше</a>
               </div>
-              <img class="slider__img" src="img/content/slide3.png" alt="Планшет и мобильный телефон" width="760" height="431">
+              <picture class="slider__img">
+                <source type="image/webp" srcset="img/content/slide3.webp">
+                <img src="img/content/slide3.png" alt="Планшет и мобильный телефон">
+              </picture>
             </li>
           </ul>
           <div class="slider__toggles">
-            <button type="button" class="slider__toggle slider__toggle--checked">
-              <span class=" visually-hidden">Первый слайд</span>
-            </button>
-            <button type="button" class="slider__toggle">
-              <span class=" visually-hidden">Второй слайд</span>
-            </button>
-            <button type="button" class="slider__toggle">
-              <span class=" visually-hidden">Третий слайд</span>
-            </button>
+            <button type="button" class="slider__toggle slider__toggle--checked" aria-label="Первый слайд"></button>
+            <button type="button" class="slider__toggle" aria-label="Второй слайд"></button>
+            <button type="button" class="slider__toggle" aria-label="Третий слайд"></button>
           </div>
         </div>
       </section>
@@ -114,19 +112,28 @@
           <h2 class="visually-hidden">Услуги</h2>
           <ul class="services__list">
             <li class="services__item">
-              <img class="services__img" src="img/content/illustration-1.jpg" alt="Веб-сайты" width="300" height="144">
+              <picture class="services__img">
+                <source type="image/webp" srcset="img/content/illustration-1.webp">
+                <img src="img/content/illustration-1.jpg" alt="Веб-сайты">
+              </picture>
               <p class="services__title">Веб-сайты</p>
               <p class="services__notice">Мир никогда не будет прежним после того как увидит ваш сайт!</p>
               <a class="btn services__btn services__btn--red" href="#">Заказать</a>
             </li>
             <li class="services__item">
-              <img class="services__img" src="img/content/illustration-2.jpg" alt="Приложения" width="300" height="144">
+              <picture class="services__img">
+                <source type="image/webp" srcset="img/content/illustration-2.webp">
+                <img src="img/content/illustration-2.jpg" alt="Приложения">
+              </picture>
               <p class="services__title">Приложения</p>
               <p class="services__notice">Покорите топ-10 приложений в AppStrore и Google Play</p>
               <a class="btn services__btn services__btn--green" href="#">Заказать</a>
             </li>
             <li class="services__item">
-              <img class="services__img" src="img/content/illustration-3.jpg" alt="Презентации" width="300" height="144">
+              <picture class="services__img">
+                <source type="image/webp" srcset="img/content/illustration-3.webp">
+                <img src="img/content/illustration-3.jpg" alt="Презентации">
+              </picture>
               <p class="services__title">Презентации</p>
               <p class="services__notice">Вы даже не подозреваете, насколько вы изумительны!</p>
               <a class="btn services__btn services__btn--yellow" href="#">Заказать</a>
@@ -149,7 +156,10 @@
             </ul>
           </div>
           <div class="studio-info__stat">
-            <img class="studio-info__picture" src="img/content/logo-illustration.jpg" alt="Логотип" width="360" height="208">
+            <picture class="studio-info__picture">
+              <source type="image/webp" srcset="img/content/logo-illustration.webp">
+              <img src="img/content/logo-illustration.jpg" alt="Логотип">
+            </picture>
             <div class="features">
               <b class="features__text">С 2004 года любим точность во всем:</b>
               <ul class="features__list">
@@ -176,27 +186,36 @@
           <h2 class="visually-hidden">Партнёры</h2>
           <ul class="parthers__list">
             <li class="parthers__item">
-              <a class="parthers__link" href="https://htmlacademy.ru/profile/cybersunt">
-                <span class="visually-hidden">HtmlAcademy</span>
-                <img class="parthers__logo" src="img/content/logo-1.png" alt="HtmlAcademy" width="199" height="68">
+              <a class="parthers__link" href="https://htmlacademy.ru/profile/cybersunt" aria-label="HtmlAcademy">
+              <picture class="parthers__logo parthers__logo--htmlacademy">
+                <source type="image/webp" srcset="img/content/logo-1.webp">
+                <img src="img/content/logo-1.png" alt="HtmlAcademy">
+              </picture>
+
               </a>
             </li>
             <li class="parthers__item">
-              <a class="parthers__link" href="#">
-                <span class="visually-hidden">Барбершоп "Бородинский"</span>
-                <img class="parthers__logo" src="img/content/logo-2.png" alt="Барбершоп Бородинский" width="209" height="87">
+              <a class="parthers__link" href="#" aria-label="Барбершоп Бородинский">
+                <picture class="parthers__logo parthers__logo--barbershop">
+                  <source type="image/webp" srcset="img/content/logo-2.webp">
+                  <img src="img/content/logo-3.png" alt="Барбершоп Бородинский">
+                </picture>
               </a>
             </li>
             <li class="parthers__item">
-              <a class="parthers__link" href="#">
-                <span class="visually-hidden">Pink</span>
-                <img class="parthers__logo" src="img/content/logo-3.png" alt="Pink" width="185" height="52">
+              <a class="parthers__link" href="#" aria-label="Pink">
+                <picture class="parthers__logo parthers__logo--pink">
+                  <source type="image/webp" srcset="img/content/logo-3.webp">
+                  <img src="img/content/logo-3.png" alt="Pink">
+                </picture>
               </a>
             </li>
             <li class="parthers__item">
-              <a class="parthers__link" href="https://cybersunt.github.io/mishka-adaptive/build">
-                <span class="visually-hidden">Мишка</span>
-                <img class="parthers__logo" src="img/content/logo-4.png" alt="Мишка" width="173" height="84">
+              <a class="parthers__link" href="https://cybersunt.github.io/mishka-adaptive/build" aria-label="Мишка">
+                <picture class="parthers__logo parthers__logo--mishka">
+                  <source type="image/webp" srcset="img/content/logo-4.webp">
+                  <img src="img/content/logo-4.png" alt="HtmlAcademy">
+                </picture>
               </a>
             </li>
           </ul>

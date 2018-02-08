@@ -35,6 +35,8 @@
 .services__img {
   display: block;
   margin-bottom: 27px;
+  width: 300px;
+  height: 144px;
 }
 
 .services__title {

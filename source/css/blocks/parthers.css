@@ -65,3 +65,23 @@
 .parthers__logo:active {
   opacity: 0.1;
 }
+
+.parthers__logo--htmlacademy {
+  width: 199px;
+  height: 68px;
+}
+
+.parthers__logo--barbershop {
+  width: 209px;
+  height: 87px;
+}
+
+.parthers__logo--pink {
+  width: 185px;
+  height: 52px;
+}
+
+.parthers__logo--mishka {
+  width: 173px;
+  height: 84px;
+}

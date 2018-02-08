@@ -73,4 +73,6 @@
 .studio-info__picture {
   display: block;
   margin-bottom: 37px;
+  width: 360px;
+  height: 208px;
 }

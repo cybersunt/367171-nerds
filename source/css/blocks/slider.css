@@ -51,6 +51,8 @@
 
 .slider__img {
   display: block;
+  width: 760px;
+  height: 431px;
 }
 
 .slider__btn {

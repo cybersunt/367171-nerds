@@ -34,6 +34,8 @@
 
 .goods__picture {
   display: block;
+  width: 360px;
+  height: 576px;
 }
 
 .goods__hover {

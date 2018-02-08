@@ -5,11 +5,6 @@
     <title>Дизайн-студия Nerds - Магазин</title>
     <meta name="description" content="Макет учебного проекта Нёрдс взят с интенсива HTMLADEMY - Базовый HTML и CSS#18">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-      // Picture element HTML5 shiv
-      document.createElement( "picture" );
-    </script>
-    <script src="picturefill.js" async></script>
   </head>
   <body class="page">
     <header class="header">
@@ -234,7 +229,10 @@
             <ul class="catalog__list">
             <li class="catalog__item goods" tabindex="0">
               <a class="goods__link-img" href="catalog-item.html">
-                <img class="goods__picture" src="img/content/img-sedona.jpg" alt="Sedona" width="360" height="576">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-sedona.webp">
+                  <img src="img/content/img-sedona.jpg" alt="Sedona">
+                </picture>
               </a>
               <div class="goods__hover" tabindex="0">
                 <h3 class="goods__name">
@@ -245,20 +243,26 @@
               </div>
             </li>
             <li class="catalog__item goods" tabindex="0">
-             <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="img/content/img-pink.jpg" alt="Pink App" width="360" height="576">
-            </a>
-             <div class="goods__hover">
-               <h3 class="goods__name">
-                 <a class="goods__link" href="catalog-item.html">Pink App</a>
-              </h3>
-               <p class="goods__desc">Продуктовый лендинг приложения для iOS и Android</p>
-               <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
+              <a class="goods__link-img" href="catalog-item.html">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-pink.webp">
+                  <img src="img/content/img-pink.jpg" alt="Pink App">
+                </picture>
+              </a>
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">Pink App</a>
+                </h3>
+                <p class="goods__desc">Продуктовый лендинг приложения для iOS и Android</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
             </li>
             <li class="catalog__item goods" tabindex="0">
               <a class="goods__link-img" href="catalog-item.html">
-                <img class="goods__picture" src="img/content/img-barbershop.jpg" alt="Barbershop" width="360" height="576">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-barbershop.webp">
+                  <img src="img/content/img-barbershop.jpg" alt="Barbershop">
+                </picture>
               </a>
               <div class="goods__hover">
                 <h3 class="goods__name">
@@ -269,40 +273,49 @@
               </div>
             </li>
             <li class="catalog__item goods" tabindex="0">
-            <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="img/content/img-mishka.jpg" alt="Mishka" width="360" height="576">
-            </a>
-            <div class="goods__hover">
-              <h3 class="goods__name">
-                <a class="goods__link" href="catalog-item.html">Mishka</a>
-              </h3>
-              <p class="goods__desc">Интернет-магазин вязаных игрушек</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
+              <a class="goods__link-img" href="catalog-item.html">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-mishka.webp">
+                  <img src="img/content/img-mishka.jpg" alt="Mishka">
+                </picture>
+              </a>
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">Mishka</a>
+                </h3>
+                <p class="goods__desc">Интернет-магазин вязаных игрушек</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
             </li>
             <li class="catalog__item goods" tabindex="0">
-            <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="img/content/img-aplus.jpg" alt="A Plus" width="360" height="576">
-            </a>
-            <div class="goods__hover">
-              <h3 class="goods__name">
-                <a class="goods__link" href="catalog-item.html">A Plus</a>
-              </h3>
-              <p class="goods__desc">Лендинг курсов повышения квалификации</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
+              <a class="goods__link-img" href="catalog-item.html">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-aplus.webp">
+                  <img src="img/content/img-aplus.jpg" alt="A Plus">
+                </picture>
+              </a>
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">A Plus</a>
+                </h3>
+                <p class="goods__desc">Лендинг курсов повышения квалификации</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
             </li>
             <li class="catalog__item goods" tabindex="0">
-            <a class="goods__link-img" href="catalog-item.html">
-              <img class="goods__picture" src="img/content/img-kvast.jpg" alt="Кваст" width="360" height="576">
-            </a>
-            <div class="goods__hover">
-              <h3 class="goods__name">
-                <a class="goods__link" href="catalog-item.html">Кваст</a>
-              </h3>
-              <p class="goods__desc">Промо-сайт производителя крафтового кваса</p>
-              <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
-            </div>
+              <a class="goods__link-img" href="catalog-item.html">
+                <picture class="goods__picture">
+                  <source type="image/webp" srcset="img/content/img-kvast.webp">
+                  <img src="img/content/img-kvast.jpg" alt="Кваст">
+                </picture>
+              </a>
+              <div class="goods__hover">
+                <h3 class="goods__name">
+                  <a class="goods__link" href="catalog-item.html">Кваст</a>
+                </h3>
+                <p class="goods__desc">Промо-сайт производителя крафтового кваса</p>
+                <a class="btn goods__price" href="catalog-item.html">9 900 руб.</a>
+              </div>
             </li>
             </ul>
           </section>
